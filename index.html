@@ -1,94 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="Gemini_Generated_Image_5qqm2g5qqm2g5qqm.png" type="image/png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Untitled Rocketry</title>
-<link rel="icon" href="Gemini_Generated_Image_5qqm2g5qqm2g5qqm.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
 <style>
 body { background-color: black; color: white; font-family: 'Space Mono', monospace; margin: 0; padding: 0; transition: background 0.5s, color 0.5s; }
 header { position: relative; height: 100vh; display: flex; justify-content: center; align-items: center; color: white; font-size: 3em; font-weight: bold; letter-spacing: 0.1em; text-align: center; overflow: hidden; }
 header::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('your-header-image.jpg') center/cover no-repeat; opacity: 0.3; z-index: -1; }
-
-/* Sidebar navigation for mobile */
-#sidebar { display: none; flex-direction: column; position: fixed; top: 0; left: 0; height: 100%; width: 200px; background: black; padding-top: 60px; z-index: 200; }
-#sidebar a { color: white; padding: 15px; text-decoration: none; text-align: center; border-bottom: 1px solid white; }
-#sidebar a:hover { background: white; color: black; }
-
-#menu-toggle { display: none; background: none; border: 2px solid white; color: white; padding: 10px; position: fixed; top: 10px; left: 10px; z-index: 300; }
-
-@media (max-width: 768px) {
-  nav { display: none; }
-  #menu-toggle { display: block; }
-}
-
 nav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; background: black; border-bottom: 2px solid white; position: sticky; top: 0; z-index: 100; width: 100%; padding: 10px; }
 nav a { color: white; text-decoration: none; padding: 15px 20px; font-weight: 400; transition: background 0.3s, color 0.3s; }
 nav a:hover { background: white; color: black; }
-#mode-toggle { background: none; border: 2px solid white; cursor: pointer; font-size: 1em; color: white; padding: 10px; margin-left: auto; }
-
+#mode-toggle { background: none; border: none; cursor: pointer; font-size: 1.5em; color: white; transition: color 0.3s; margin-left: auto; padding: 15px 20px; }
+section { padding: 60px 20px; max-width: 900px; margin: 0 auto; border-bottom: 2px solid white; }
+h2 { font-size: 2em; margin-bottom: 20px; border-bottom: 1px solid white; display: inline-block; }
+.member, .project { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 20px; }
+@media (min-width: 600px) { .member, .project { flex-direction: row; gap: 20px; } }
+.member img, .project img { width: 80%; max-width: 200px; height: auto; object-fit: cover; border: 2px solid white; }
+.donate-button { background: none; border: 2px solid white; color: white; padding: 10px 20px; font-size: 1em; cursor: pointer; transition: background 0.3s, color 0.3s; width: 90%; max-width: 300px; }
+.donate-button:hover { background: white; color: black; }
+.email-form input[type="email"] { padding: 10px; width: 90%; max-width: 300px; border: 2px solid white; background: black; color: white; margin-bottom: 10px; }
+.email-form input[type="submit"] { padding: 10px 20px; border: 2px solid white; background: black; color: white; cursor: pointer; transition: background 0.3s, color 0.3s; width: 90%; max-width: 300px; }
+.email-form input[type="submit"]:hover { background: white; color: black; }
 .light-mode { background-color: white; color: black; }
 .light-mode nav { background: white; border-bottom: 2px solid black; }
 .light-mode nav a { color: black; }
 .light-mode nav a:hover { background: black; color: white; }
-.light-mode #mode-toggle { color: black; border: 2px solid black; }
+.light-mode #mode-toggle { color: black; }
+.light-mode header { color: black; }
+.light-mode header::before { opacity: 0.15; }
+.light-mode .member img, .light-mode .project img, .light-mode .donate-button, .light-mode .email-form input[type="email"], .light-mode .email-form input[type="submit"] { border: 2px solid black; }
 </style>
 </head>
 <body>
 <header>UNTITLED ROCKETRY</header>
-<!-- Menu toggle button for mobile -->
-<button id="menu-toggle">Options</button>
-<!-- Sidebar for mobile navigation -->
-<div id="sidebar">
-  <a href="#" onclick="scrollToTop(); closeNav();">Untitled Rocketry</a>
-  <a href="#mission" onclick="closeNav()">Mission</a>
-  <a href="#team" onclick="closeNav()">Team</a>
-  <a href="#projects" onclick="closeNav()">Projects</a>
-  <a href="#events" onclick="closeNav()">Events</a>
-  <a href="#donate" onclick="closeNav()">Donate</a>
-  <a href="#contact" onclick="closeNav()">Contact</a>
-  <button id="mode-toggle" onclick="toggleMode()">Toggle Mode</button>
-</div>
-<!-- Standard navbar for desktop -->
 <nav>
-  <!-- ✅ Clicking title scrolls to top -->
-  <a href="#" onclick="scrollToTop()" style="font-weight:bold;">UNTITLED ROCKETRY</a>
+  <span style="font-weight:bold; padding: 15px 20px;">UNTITLED ROCKETRY</span>
   <a href="#mission">Mission</a>
   <a href="#team">Team</a>
   <a href="#projects">Projects</a>
   <a href="#events">Events</a>
   <a href="#donate">Donate</a>
   <a href="#contact">Contact</a>
-  <!-- ✅ Text button replacing emoji -->
-  <button id="mode-toggle" onclick="toggleMode()">Toggle Mode</button>
+  <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
 </nav>
 <script>
-function toggleMode() {
-  document.body.classList.toggle('light-mode');
-}
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-function openNav() {
-  document.getElementById('sidebar').style.display = 'flex';
-}
-function closeNav() {
-  document.getElementById('sidebar').style.display = 'none';
-}
-document.getElementById('menu-toggle').addEventListener('click', function() {
-  const sidebar = document.getElementById('sidebar');
-  if (sidebar.style.display === 'flex') {
-    closeNav();
-  } else {
-    openNav();
-  }
+const modeToggle = document.getElementById('mode-toggle');
+modeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    modeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
 });
 </script>
-<!-- Sections remain unchanged -->
+<!-- The rest of the sections remain unchanged -->
 </body>
 </html>
-
 
 
 
