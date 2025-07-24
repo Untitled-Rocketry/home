@@ -1,235 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Untitled Rocketry</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-  <style>
-    /* Color Variables */
-    :root {
-      --bg-color: #0a0f22;
-      --surface-color: #1e2a47;
-      --text-color: #ffffff;
-      --accent-color: #3a558f;
-      --nav-bg: #0a0f22;
-      --border-color: #ffffff;
-      --button-bg: #ffffff;
-      --button-text: #0a0f22;
-      --button-hover: #f0f0f0;
-    }
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-    h1, h2, h3 { font-family: 'Orbitron', sans-serif; color: var(--text-color); }
-    a { color: var(--accent-color); text-decoration: none; }
-
-    nav {
-      background: var(--nav-bg);
-      padding: 1rem 2rem;
-      position: fixed; width: 100%; top: 0; z-index: 10;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    nav ul { display: flex; list-style: none; }
-    nav li { margin-left: 2rem; }
-    nav a { color: var(--text-color); }
-    nav a:hover { opacity: 0.8; }
-
-    header {
-      height: 100vh;
-      background: url('header-bg.jpg') center/cover no-repeat;
-      display: flex; justify-content: center; align-items: center;
-    }
-    header h1 {
-      font-size: 4rem;
-      font-weight: 900;
-      color: var(--text-color);
-      text-shadow: 0 0 10px var(--accent-color);
-    }
-
-    section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-      border-bottom: 2px solid var(--border-color);
-    }
-    section:last-of-type { border-bottom: none; }
-    section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--accent-color);
-    }
-
-    /* About */
-    #about p { max-width: 800px; margin-bottom: 1rem; }
-
-    /* Calendar */
-    #calendar .calendar-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 2rem;
-    }
-    .calendar {
-      background: var(--surface-color);
-      padding: 1rem;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-    }
-    .calendar table { width: 100%; border-collapse: collapse; }
-    .calendar th, .calendar td {
-      padding: 0.5rem;
-      text-align: center;
-      color: var(--text-color);
-    }
-    .calendar th { color: var(--accent-color); }
-    .event-list { margin-top: 1rem; }
-    .event-list li { margin-bottom: 0.5rem; }
-
-    /* Team */
-    #team .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-      gap: 2rem;
-    }
-    .member {
-      background: var(--surface-color);
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
-      border: 1px solid var(--border-color);
-    }
-    .member img {
-      width: 100%;
-      border-radius: 50%;
-      border: 3px solid var(--accent-color);
-      margin-bottom: 0.5rem;
-    }
-    .member h3 { margin: 0.5rem 0; }
-    .member p { font-size: 0.9rem; color: var(--text-color); }
-
-    /* Projects */
-    #projects .project-item {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      background: var(--surface-color);
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 2rem;
-      border: 1px solid var(--border-color);
-    }
-    #projects .project-item img {
-      width: 200px;
-      height: auto;
-      border-radius: 4px;
-      margin-right: 2rem;
-      flex-shrink: 0;
-      border: 1px solid var(--border-color);
-    }
-    #projects .project-content h3 { margin-bottom: 0.5rem; }
-
-    /* Contact */
-    #contact { text-align: center; }
-    #contact a { font-weight: bold; }
-
-    /* Donate */
-    #donate {
-      text-align: center;
-    }
-    #donate a {
-      background: var(--button-bg);
-      color: var(--button-text);
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      transition: background 0.3s;
-      border: 1px solid var(--border-color);
-      font-weight: 700;
-      display: inline-block;
-    }
-    #donate a:hover { background: var(--button-hover); }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      opacity: 0.7;
-      border-top: 1px solid var(--border-color);
-    }
-
-    @media (max-width: 800px) {
-      #projects .project-item { flex-direction: column; text-align: center; }
-      #projects .project-item img { margin: 0 0 1rem; }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untitled Rocketry</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #0a0f2c;
+            color: white;
+        }
+        section {
+            padding: 50px 20px;
+            border-bottom: 1px solid grey;
+            max-width: 1000px;
+            margin: auto;
+        }
+        h1, h2, h3 {
+            text-align: center;
+            font-weight: 600;
+        }
+        .members, .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .member, .project {
+            background-color: #11162e;
+            padding: 15px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+        }
+        .member img, .project img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="email"] {
+            padding: 10px;
+            width: 250px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #1c223f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2a3056;
+        }
+        .events ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        .events li {
+            margin: 10px 0;
+        }
+        .donate button {
+            background-color: #007bff;
+        }
+        .donate button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <div class="logo"><a href="#">Untitled Rocketry</a></div>
-    <ul>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#calendar">Calendar</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <section>
+        <h1>Untitled Rocketry</h1>
+        <p style="text-align: center; max-width: 600px; margin: auto;">
+            We are a high school rocketry team competing in the American Rocketry Challenge, building 3D printed rockets, engaging in high power rocketry, and pioneering liquid rocket development. National finalists two years running, we push boundaries to inspire the next generation of aerospace engineers.
+        </p>
+    </section>
 
-  <!-- Hero -->
-  <header>
-    <h1>Untitled Rocketry</h1>
-  </header>
+    <section>
+        <h2>Team Members</h2>
+        <div class="members">
+            <div class="member">
+                <img src="member1.jpg" alt="Member 1" />
+                <h3>Member Name 1</h3>
+                <p>Role / Specialty</p>
+            </div>
+            <div class="member">
+                <img src="member2.jpg" alt="Member 2" />
+                <h3>Member Name 2</h3>
+                <p>Role / Specialty</p>
+            </div>
+            <!-- Add additional members here -->
+        </div>
+    </section>
 
-  <!-- About Us -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p><strong>Mission Statement:</strong> At Untitled Rocketry, our mission is to push the limits of amateur aerospace engineering through collaborative innovation, rigorous testing, and a passion for exploration. We aim to inspire the next generation of engineers by sharing our knowledge and achievements with the community.</p>
-    <p>Founded by a group of high-school enthusiasts, we design, build, and launch high-performance rockets, combining cutting-edge materials and precise simulation tools to achieve new altitudes and milestones.</p>
-  </section>
+    <section>
+        <h2>Our Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <img src="project1.jpg" alt="Project 1" />
+                <h3>Project Title 1</h3>
+                <p>Short description of the project and its purpose.</p>
+            </div>
+            <div class="project">
+                <img src="project2.jpg" alt="Project 2" />
+                <h3>Project Title 2</h3>
+                <p>Short description of the project and its purpose.</p>
+            </div>
+            <!-- Add additional projects here -->
+        </div>
+    </section>
 
-  <!-- Calendar -->
-  <section id="calendar">
-    <h2>Upcoming Events & Launches</h2>
-    <div class="calendar-container">
-      <div class="calendar">
-        <h3>July 2025</h3>
-        <table>
-          <thead>
-            <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
-          </thead>
-          <tbody>
-            <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
-            <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="calendar upcoming">
-        <h3>Next Events</h3>
-        <ul class="event-list">
-          <li><strong>Sept 12, 2025:</strong> Community Outreach Talk</li>
-          <li><strong>Oct 18, 2025:</strong> Composite Nose Cone Testing</li>
-          <li><strong>Nov 22, 2025:</strong> Annual Competition Launch</li>
+    <section class="events">
+        <h2>Upcoming Events</h2>
+        <ul>
+            <li>ARC National Finals - June 2026</li>
+            <li>High Power Launch Day - August 2026</li>
+            <li>Liquid Rocket Static Fire - September 2026</li>
+            <!-- Add more events as needed -->
         </ul>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Team -->
-  <section id="team">
-    <h2>Meet the Team</h2>
-    <div class="grid">
-      <div class="member"><img src="team/member1.jpg" alt="Member 1"><h3>Member One</h3><p>Role</p></div>
-      <div class="member"><img src="team/member2.jpg" alt="Member 2"><h3>Member Two</h3><p>Role</p></div>
-      <div class="member"><img src="team/member3.jpg" alt="Member 3"><h3>Member Three</h3><p>Role</p></div>
-      <div class="member"><img src="team/member4.jpg" alt="Member 4"><h3>Member Four</h3><p>Role</p></div>
-      <div class="member"><img src="team/member5.jpg" alt="Member 5"><h3>Member Five</h3><p>Role</p></div>
-      <div class="member"><img src="team/member6.jpg" alt="Member 6"><h3>Member Six</h3><p>Role</p></div>
-      <div class="member"><img src="team/member7.jpg" alt="Member 7"><h3>Member Seven</
+    <section class="donate">
+        <h2>Support Our Mission</h2>
+        <p style="text-align: center; max-width: 600px; margin: auto;">Your donations help us continue building advanced rocketry projects and inspire future engineers through hands-on learning.</p>
+        <form action="https://www.paypal.com/donate" method="get" target="_blank">
+            <button type="submit">Donate Now</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Contact Us</h2>
+        <p style="text-align: center;">Email: untitledrocketry@gmail.com</p>
+        <form>
+            <label for="email">Subscribe to our newsletter:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+</body>
+</html>
