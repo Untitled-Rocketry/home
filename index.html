@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Untitled Rocketry</title>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
   <style>
     /* Color Variables */
     :root {
@@ -14,9 +14,10 @@
       --text-color: #ffffff;
       --accent-color: #3a558f;
       --nav-bg: #0a0f22;
-      --border-color: #3a558f;
-      --button-bg: #3a558f;
-      --button-hover: #2a3a6a;
+      --border-color: #ffffff;
+      --button-bg: #ffffff;
+      --button-text: #0a0f22;
+      --button-hover: #f0f0f0;
     }
     /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,9 +28,7 @@
       color: var(--text-color);
       line-height: 1.6;
     }
-    h1, h2, h3 {
-      font-family: 'Orbitron', sans-serif;
-    }
+    h1, h2, h3 { font-family: 'Orbitron', sans-serif; color: var(--text-color); }
     a { color: var(--accent-color); text-decoration: none; }
 
     nav {
@@ -40,6 +39,7 @@
     }
     nav ul { display: flex; list-style: none; }
     nav li { margin-left: 2rem; }
+    nav a { color: var(--text-color); }
     nav a:hover { opacity: 0.8; }
 
     header {
@@ -49,7 +49,8 @@
     }
     header h1 {
       font-size: 4rem;
-      color: var(--accent-color);
+      font-weight: 900;
+      color: var(--text-color);
       text-shadow: 0 0 10px var(--accent-color);
     }
 
@@ -66,90 +67,61 @@
       color: var(--accent-color);
     }
 
-    /* About */
-    #about p { max-width: 800px; margin-bottom: 1rem; }
-
-    /* Calendar */
-    #calendar .calendar-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 2rem;
-    }
-    .calendar {
-      background: var(--surface-color);
-      padding: 1rem;
-      border-radius: 8px;
-    }
-    .calendar table { width: 100%; border-collapse: collapse; }
-    .calendar th, .calendar td {
-      padding: 0.5rem;
+    /* Form Section */
+    #subscribe {
       text-align: center;
     }
+    #subscribe input[type="email"] {
+      padding: 0.75rem;
+      width: 300px;
+      max-width: 100%;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      margin-right: 0.5rem;
+      font-size: 1rem;
+    }
+    #subscribe button {
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--border-color);
+      background: var(--button-bg);
+      color: var(--button-text);
+      border-radius: 4px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #subscribe button:hover {
+      background: var(--button-hover);
+    }
+
+    /* Existing Styles... (About, Calendar, Team, Projects, Contact, Donate, Footer) */
+    /* About */
+    #about p { max-width: 800px; margin-bottom: 1rem; }
+    /* Calendar */
+    #calendar .calendar-container { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 2rem; }
+    .calendar { background: var(--surface-color); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); }
+    .calendar table { width: 100%; border-collapse: collapse; }
+    .calendar th, .calendar td { padding: 0.5rem; text-align: center; color: var(--text-color); }
     .calendar th { color: var(--accent-color); }
     .event-list { margin-top: 1rem; }
     .event-list li { margin-bottom: 0.5rem; }
-
     /* Team */
-    #team .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-      gap: 2rem;
-    }
-    .member {
-      background: var(--surface-color);
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
-    }
-    .member img {
-      width: 100%;
-      border-radius: 50%;
-      border: 3px solid var(--accent-color);
-      margin-bottom: 0.5rem;
-    }
+    #team .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 2rem; }
+    .member { background: var(--surface-color); padding: 1rem; border-radius: 8px; text-align: center; border: 1px solid var(--border-color); }
+    .member img { width: 100%; border-radius: 50%; border: 3px solid var(--accent-color); margin-bottom: 0.5rem; }
     .member h3 { margin: 0.5rem 0; }
-    .member p { font-size: 0.9rem; }
-
+    .member p { font-size: 0.9rem; color: var(--text-color); }
     /* Projects */
-    #projects .project-item {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      background: var(--surface-color);
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 2rem;
-      border: 1px solid var(--border-color);
-    }
-    #projects .project-item img {
-      width: 200px;
-      height: auto;
-      border-radius: 4px;
-      margin-right: 2rem;
-      flex-shrink: 0;
-    }
+    #projects .project-item { display: flex; flex-wrap: wrap; align-items: center; background: var(--surface-color); padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid var(--border-color); }
+    #projects .project-item img { width: 200px; height: auto; border-radius: 4px; margin-right: 2rem; flex-shrink: 0; border: 1px solid var(--border-color); }
     #projects .project-content h3 { margin-bottom: 0.5rem; }
-
     /* Contact & Donate */
     #contact, #donate { text-align: center; }
-    #contact a, #donate a { font-weight: bold; display: inline-block; margin-top: 1rem; }
-    #donate a {
-      background: var(--button-bg);
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
+    #contact a { font-weight: bold; }
+    #donate a { background: var(--button-bg); color: var(--button-text); padding: 0.75rem 1.5rem; border-radius: 4px; transition: background 0.3s; border: 1px solid var(--border-color); font-weight: 700; }
     #donate a:hover { background: var(--button-hover); }
-
     /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
-
+    footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; border-top: 1px solid var(--border-color); }
     @media (max-width: 800px) {
       #projects .project-item { flex-direction: column; text-align: center; }
       #projects .project-item img { margin: 0 0 1rem; }
@@ -193,90 +165,4 @@
           </thead>
           <tbody>
             <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
-            <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
-            <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
-            <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
-            <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="calendar upcoming">
-        <h3>Next Events</h3>
-        <ul class="event-list">
-          <li><strong>Sept 12, 2025:</strong> Community Outreach Talk</li>
-          <li><strong>Oct 18, 2025:</strong> Composite Nose Cone Testing</li>
-          <li><strong>Nov 22, 2025:</strong> Annual Competition Launch</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team -->
-  <section id="team">
-    <h2>Meet the Team</h2>
-    <div class="grid">
-      <!-- Eight members -->
-      <div class="member"><img src="team/member1.jpg" alt="Member 1"><h3>Member One</h3><p>Role</p></div>
-      <div class="member"><img src="team/member2.jpg" alt="Member 2"><h3>Member Two</h3><p>Role</p></div>
-      <div class="member"><img src="team/member3.jpg" alt="Member 3"><h3>Member Three</h3><p>Role</p></div>
-      <div class="member"><img src="team/member4.jpg" alt="Member 4"><h3>Member Four</h3><p>Role</p></div>
-      <div class="member"><img src="team/member5.jpg" alt="Member 5"><h3>Member Five</h3><p>Role</p></div>
-      <div class="member"><img src="team/member6.jpg" alt="Member 6"><h3>Member Six</h3><p>Role</p></div>
-      <div class="member"><img src="team/member7.jpg" alt="Member 7"><h3>Member Seven</h3><p>Role</p></div>
-      <div class="member"><img src="team/member8.jpg" alt="Member 8"><h3>Member Eight</h3><p>Role</p></div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-item">
-      <img src="projects/projectA1.jpg" alt="Carbon Fiber Booster">
-      <div class="project-content">
-        <h3>Project A-1: Carbon Fiber Booster</h3>
-        <p>A lightweight booster stage using hybrid carbon fiber composites, designed to withstand pressures up to 200 PSI.</p>
-      </div>
-    </div>
-    <div class="project-item">
-      <img src="projects/projectB2.jpg" alt="3D Printed Payload Module">
-      <div class="project-content">
-        <h3>Project B-2: 3D Printed Payload Module</h3>
-        <p>A modular payload section with rapid prototyping features, optimized for sensor integration.</p>
-      </div>
-    </div>
-    <div class="project-item">
-      <img src="projects/projectC3.jpg" alt="Hybrid Propulsion Test">
-      <div class="project-content">
-        <h3>Project C-3: Hybrid Propulsion Test</h3>
-        <p>Testing a novel hybrid propellant mixture for performance and safety metrics.</p>
-      </div>
-    </div>
-    <div class="project-item">
-      <img src="projects/projectD4.jpg" alt="Aerodynamic Fairing Study">
-      <div class="project-content">
-        <h3>Project D-4: Aerodynamic Fairing Study</h3>
-        <p>Computational fluid dynamics analysis of nose cone shapes to minimize drag.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Questions? Partnerships? Reach out at <a href="mailto:info@untitledrocketry.org">info@untitledrocketry.org</a>.</p>
-  </section>
-
-  <!-- Donate -->
-  <section id="donate">
-    <h2>Support Our Mission</h2>
-    <p>Your contributions help fund materials, launch costs, and community outreach.</p>
-    <a href="#" role="button">Donate Now</a>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Untitled Rocketry. All Rights Reserved.
-  </footer>
-</body>
-</html>
-
+            <tr><td>6</td><td>7</td><td>8
