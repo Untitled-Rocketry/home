@@ -6,144 +6,139 @@
     <title>Untitled Rocketry</title>
     <style>
         body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #0a0f2c;
+            background-color: black;
             color: white;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 3em;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            border-bottom: 2px solid white;
         }
         section {
-            padding: 50px 20px;
-            border-bottom: 1px solid grey;
-            max-width: 1000px;
-            margin: auto;
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            border-bottom: 2px solid white;
         }
-        h1, h2, h3 {
-            text-align: center;
-            font-weight: 600;
-        }
-        .members, .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 1px solid white;
+            display: inline-block;
         }
         .member, .project {
-            background-color: #11162e;
-            padding: 15px;
-            border-radius: 8px;
-            width: 300px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
         }
         .member img, .project img {
-            width: 100%;
-            border-radius: 8px;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid white;
         }
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .donate-button {
+            background: none;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
         }
-        input[type="email"] {
+        .donate-button:hover {
+            background: white;
+            color: black;
+        }
+        .email-form input[type="email"] {
             padding: 10px;
             width: 250px;
-            border: none;
-            border-radius: 5px;
-            margin: 10px 0;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #1c223f;
+            border: 2px solid white;
+            background: black;
             color: white;
-            border: none;
-            border-radius: 5px;
+        }
+        .email-form input[type="submit"] {
+            padding: 10px 20px;
+            border: 2px solid white;
+            background: black;
+            color: white;
             cursor: pointer;
+            transition: background 0.3s, color 0.3s;
         }
-        button:hover {
-            background-color: #2a3056;
-        }
-        .events ul {
-            list-style: none;
-            padding: 0;
-            text-align: center;
-        }
-        .events li {
-            margin: 10px 0;
-        }
-        .donate button {
-            background-color: #007bff;
-        }
-        .donate button:hover {
-            background-color: #0056b3;
+        .email-form input[type="submit"]:hover {
+            background: white;
+            color: black;
         }
     </style>
 </head>
 <body>
-    <section>
-        <h1>Untitled Rocketry</h1>
-        <p style="text-align: center; max-width: 600px; margin: auto;">
-            We are a high school rocketry team competing in the American Rocketry Challenge, building 3D printed rockets, engaging in high power rocketry, and pioneering liquid rocket development. National finalists two years running, we push boundaries to inspire the next generation of aerospace engineers.
-        </p>
+    <header>
+        UNTITLED ROCKETRY
+    </header>
+
+    <section id="mission">
+        <h2>Mission Statement</h2>
+        <p>We are Untitled Rocketry, a high school team competing in the American Rocketry Challenge, building 3D printed rockets, advancing in high power rocketry, and pioneering liquid rocket development. We have been national finalists for 2 years running, dedicated to pushing the boundaries of student rocketry with precision, creativity, and innovation.</p>
     </section>
 
-    <section>
+    <section id="team">
         <h2>Team Members</h2>
-        <div class="members">
-            <div class="member">
-                <img src="member1.jpg" alt="Member 1" />
-                <h3>Member Name 1</h3>
-                <p>Role / Specialty</p>
-            </div>
-            <div class="member">
-                <img src="member2.jpg" alt="Member 2" />
-                <h3>Member Name 2</h3>
-                <p>Role / Specialty</p>
-            </div>
-            <!-- Add additional members here -->
+        <div class="member">
+            <img src="member1.jpg" alt="Member 1">
+            <div><strong>Member 1</strong><br>Role description and contributions here.</div>
         </div>
+        <div class="member">
+            <img src="member2.jpg" alt="Member 2">
+            <div><strong>Member 2</strong><br>Role description and contributions here.</div>
+        </div>
+        <!-- Add more team members as needed -->
     </section>
 
-    <section>
-        <h2>Our Projects</h2>
-        <div class="projects">
-            <div class="project">
-                <img src="project1.jpg" alt="Project 1" />
-                <h3>Project Title 1</h3>
-                <p>Short description of the project and its purpose.</p>
-            </div>
-            <div class="project">
-                <img src="project2.jpg" alt="Project 2" />
-                <h3>Project Title 2</h3>
-                <p>Short description of the project and its purpose.</p>
-            </div>
-            <!-- Add additional projects here -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <img src="project1.jpg" alt="3D Printed Rocket">
+            <div><strong>3D Printed Rocket Series</strong><br>Building and testing fully 3D printed airframes for optimized weight and strength.</div>
         </div>
+        <div class="project">
+            <img src="project2.jpg" alt="Liquid Rocket Development">
+            <div><strong>Liquid Rocket Development</strong><br>Designing and testing liquid propulsion systems for high-altitude and experimental rocketry.</div>
+        </div>
+        <!-- Add more projects as needed -->
     </section>
 
-    <section class="events">
+    <section id="events">
         <h2>Upcoming Events</h2>
         <ul>
-            <li>ARC National Finals - June 2026</li>
-            <li>High Power Launch Day - August 2026</li>
-            <li>Liquid Rocket Static Fire - September 2026</li>
-            <!-- Add more events as needed -->
+            <li>August 15, 2025 - TARC Test Launch</li>
+            <li>September 5, 2025 - High Power Launch Day</li>
+            <li>October 12, 2025 - Outreach Workshop for Middle School Students</li>
+            <!-- Add more upcoming events as needed -->
         </ul>
     </section>
 
-    <section class="donate">
-        <h2>Support Our Mission</h2>
-        <p style="text-align: center; max-width: 600px; margin: auto;">Your donations help us continue building advanced rocketry projects and inspire future engineers through hands-on learning.</p>
-        <form action="https://www.paypal.com/donate" method="get" target="_blank">
-            <button type="submit">Donate Now</button>
-        </form>
+    <section id="donate">
+        <h2>Donate</h2>
+        <p>Support Untitled Rocketry’s mission to advance high school rocketry innovation and STEM outreach. Your contributions help us fund materials, travel, and testing for our projects and competitions.</p>
+        <button class="donate-button" onclick="window.location.href='https://your-donation-link.com'">Donate Now</button>
     </section>
 
-    <section>
+    <section id="contact">
         <h2>Contact Us</h2>
-        <p style="text-align: center;">Email: untitledrocketry@gmail.com</p>
-        <form>
-            <label for="email">Subscribe to our newsletter:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required />
-            <button type="submit">Subscribe</button>
+        <p>Email: untitledrocketry@example.com</p>
+        <form class="email-form">
+            <label for="email">Subscribe to our mailing list:</label><br><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <input type="submit" value="Subscribe">
         </form>
     </section>
 </body>
