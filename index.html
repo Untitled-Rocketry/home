@@ -1,39 +1,224 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Untitled Rocketry</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #555;
-        }
-        a.button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007acc;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        a.button:hover {
-            background-color: #005fa3;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Untitled Rocketry</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Dark Mode Base */
+    :root {
+      --bg-color: #0a0f22;
+      --surface-color: #1e2a47;
+      --text-color: #ffffff;
+      --accent-color: #3a558f;
+      --nav-bg: #0a0f22;
+    }
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    a { color: var(--accent-color); text-decoration: none; }
+    nav {
+      background: var(--nav-bg);
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav ul { display: flex; list-style: none; }
+    nav li { margin-left: 2rem; }
+    nav a:hover { opacity: 0.8; }
+
+    header {
+      height: 100vh;
+      background: url('header-bg.jpg') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 4rem;
+      text-shadow: 0 0 10px var(--accent-color);
+    }
+
+    section { padding: 4rem 2rem; max-width: 1200px; margin: auto; }
+    section h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent-color); }
+
+    /* About */
+    #about p { max-width: 800px; margin-bottom: 1rem; }
+
+    /* Calendar */
+    #calendar .calendar-container { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 2rem; }
+    .calendar { background: var(--surface-color); padding: 1rem; border-radius: 8px; }
+    .calendar table { width: 100%; border-collapse: collapse; }
+    .calendar th, .calendar td { padding: 0.5rem; text-align: center; }
+    .calendar th { color: var(--accent-color); }
+    .event-list { margin-top: 1rem; }
+    .event-list li { margin-bottom: 0.5rem; }
+
+    /* Projects */
+    #projects .cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 2rem; }
+    .card { background: var(--surface-color); padding: 1rem; border-radius: 8px; }
+    .card h3 { margin-bottom: 0.5rem; }
+    .card p { font-size: 0.95rem; }
+
+    /* Footer */
+    footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.5rem; }
+      nav ul { display: none; }
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to Untitled Rocketry</h1>
-    <p>...We build and launch high-performance model rockets.</p>
-    <a href="https://github.com/untitledrocketry" class="button">View Our GitHub</a>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo"><a href="index.html">Untitled Rocketry</a></div>
+    <ul>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#calendar">Calendar</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header>
+    <h1>Untitled Rocketry</h1>
+  </header>
+
+  <!-- About Us -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p><strong>Mission Statement:</strong> At Untitled Rocketry, our mission is to push the limits of amateur aerospace engineering through collaborative innovation, rigorous testing, and a passion for exploration. We aim to inspire the next generation of engineers by sharing our knowledge and achievements with the community.</p>
+    <p>Founded by a group of high-school enthusiasts, we design, build, and launch high-performance rockets, combining cutting-edge materials and precise simulation tools to achieve new altitudes and milestones.</p>
+  </section>
+
+  <!-- Calendar -->
+  <section id="calendar">
+    <h2>Upcoming Events & Launches</h2>
+    <div class="calendar-container">
+      <div class="calendar">
+        <h3>July 2025</h3>
+        <table>
+          <thead>
+            <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+          </thead>
+          <tbody>
+            <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+            <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+            <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+            <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+            <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
+          </tbody>
+        </table>
+        <ul class="event-list">
+          <li><strong>July 30, 2025:</strong> High-Altitude Test Launch</li>
+          <li><strong>August 5, 2025:</strong> Design Workshop</li>
+        </ul>
+      </div>
+      <div class="calendar upcoming">
+        <h3>Next Events</h3>
+        <ul class="event-list">
+          <li><strong>Sept 12, 2025:</strong> Community Outreach Talk</li>
+          <li><strong>Oct 18, 2025:</strong> Composite Nose Cone Testing</li>
+          <li><strong>Nov 22, 2025:</strong> Annual Competition Launch</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Project A-1: Carbon Fiber Booster</h3>
+        <p>A lightweight booster stage using hybrid carbon fiber composites, designed to withstand pressures up to 200 PSI.</p>
+      </div>
+      <div class="card">
+        <h3>Project B-2: 3D Printed Payload Module</h3>
+        <p>A modular payload section with rapid prototyping features, optimized for sensor integration.</p>
+      </div>
+      <div class="card">
+        <h3>Project C-3: Hybrid Propulsion Test</h3>
+        <p>Testing a novel hybrid propellant mixture for performance and safety metrics.</p>
+      </div>
+      <div class="card">
+        <h3>Project D-4: Aerodynamic Fairing Study</h3>
+        <p>Computational fluid dynamics analysis of nose cone shapes to minimize drag.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Questions? Partnerships? Reach out at <a href="mailto:info@untitledrocketry.org">info@untitledrocketry.org</a>.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Untitled Rocketry. All Rights Reserved.
+  </footer>
+</body>
+</html>
+
+
+<!-- team.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Untitled Rocketry - Our Team</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { background: #0a0f22; color: #fff; font-family: 'Orbitron', sans-serif; margin: 0; }
+    nav { background: #0a0f22; padding: 1rem 2rem; }
+    nav a { color: #3a558f; margin-right: 2rem; text-decoration: none; }
+    section { padding: 4rem 2rem; max-width: 1200px; margin: auto; }
+    h1, h2 { color: #3a558f; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 2rem; }
+    .member { text-align: center; }
+    .member img { width: 100%; border-radius: 50%; border: 3px solid #3a558f; }
+    .member h3 { margin-top: 0.5rem; }
+    footer { text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="team.html">Team</a>
+  </nav>
+  <section>
+    <h2>Meet the Team</h2>
+    <div class="grid">
+      <!-- Eight members placeholders -->
+      <div class="member"><img src="team/member1.jpg" alt="Member 1"><h3>Member One</h3><p>Role</p></div>
+      <div class="member"><img src="team/member2.jpg" alt="Member 2"><h3>Member Two</h3><p>Role</p></div>
+      <div class="member"><img src="team/member3.jpg" alt="Member 3"><h3>Member Three</h3><p>Role</p></div>
+      <div class="member"><img src="team/member4.jpg" alt="Member 4"><h3>Member Four</h3><p>Role</p></div>
+      <div class="member"><img src="team/member5.jpg" alt="Member 5"><h3>Member Five</h3><p>Role</p></div>
+      <div class="member"><img src="team/member6.jpg" alt="Member 6"><h3>Member Six</h3><p>Role</p></div>
+      <div class="member"><img src="team/member7.jpg" alt="Member 7"><h3>Member Seven</h3><p>Role</p></div>
+      <div class="member"><img src="team/member8.jpg" alt="Member 8"><h3>Member Eight</h3><p>Role</p></div>
+    </div>
+  </section>
+  <footer>&copy; 2025 Untitled Rocketry</footer>
 </body>
 </html>
