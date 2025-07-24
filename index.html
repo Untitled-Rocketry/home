@@ -15,6 +15,8 @@
       --accent-color: #3a558f;
       --nav-bg: #0a0f22;
       --border-color: #3a558f;
+      --button-bg: #3a558f;
+      --button-hover: #2a3a6a;
     }
     /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -128,9 +130,17 @@
     }
     #projects .project-content h3 { margin-bottom: 0.5rem; }
 
-    /* Contact */
-    #contact { text-align: center; }
-    #contact a { font-weight: bold; }
+    /* Contact & Donate */
+    #contact, #donate { text-align: center; }
+    #contact a, #donate a { font-weight: bold; display: inline-block; margin-top: 1rem; }
+    #donate a {
+      background: var(--button-bg);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    #donate a:hover { background: var(--button-hover); }
 
     /* Footer */
     footer {
@@ -189,10 +199,6 @@
             <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
           </tbody>
         </table>
-        <ul class="event-list">
-          <li><strong>July 30, 2025:</strong> High-Altitude Test Launch</li>
-          <li><strong>August 5, 2025:</strong> Design Workshop</li>
-        </ul>
       </div>
       <div class="calendar upcoming">
         <h3>Next Events</h3>
@@ -260,9 +266,17 @@
     <p>Questions? Partnerships? Reach out at <a href="mailto:info@untitledrocketry.org">info@untitledrocketry.org</a>.</p>
   </section>
 
+  <!-- Donate -->
+  <section id="donate">
+    <h2>Support Our Mission</h2>
+    <p>Your contributions help fund materials, launch costs, and community outreach.</p>
+    <a href="#" role="button">Donate Now</a>
+  </section>
+
   <!-- Footer -->
   <footer>
     &copy; 2025 Untitled Rocketry. All Rights Reserved.
   </footer>
 </body>
 </html>
+
