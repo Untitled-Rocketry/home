@@ -34,30 +34,9 @@
         .light-mode #mode-toggle { color: black; }
         .light-mode header { color: black; }
         .light-mode .member img, .light-mode .project img, .light-mode .donate-button, .light-mode .email-form input[type="email"], .light-mode .email-form input[type="submit"] { border: 2px solid black; }
-        .nav-links {
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height 0.3s ease;
-        }
-        .nav-links.show {
-          max-height: 500px;
-        }
     </style>
 </head>
 <body>
-    
-<button class="nav-toggle" aria-label="Toggle navigation menu" id="navToggle">☰</button>
-    
-<script>
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.querySelector('.nav-links');
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
-</script>
-
-
-    
 <nav role="navigation">
     <span style="font-weight:bold; padding: 15px 20px;">UNTITLED ROCKETRY</span>
     <a href="#mission">Mission</a>
@@ -69,7 +48,6 @@ navToggle.addEventListener('click', () => {
     <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
 </nav>
 
-    
 <header>UNTITLED ROCKETRY</header>
 
 <section id="mission">
