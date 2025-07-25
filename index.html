@@ -35,7 +35,7 @@
       height: 100vh;
       width: 200px;
       background: black;
-      border-right: 2px solid white;
+      border-left: 2px solid white;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -106,6 +106,9 @@
       border-bottom: 1px solid white;
       display: inline-block;
     }
+    .light-mode h2 {
+      border-bottom: 1px solid black; /* Light mode heading underline */
+    }
     .member, .project {
       display: flex;
       flex-direction: column;
@@ -119,6 +122,10 @@
       max-width: 300px;
       border: 2px solid white;
     }
+    .light-mode .member img,
+    .light-mode .project img {
+      border: 2px solid black; /* Light mode image border */
+    }
     .donate-button {
       background: none;
       border: 2px solid white;
@@ -129,7 +136,16 @@
       width: 90%;
       max-width: 300px;
     }
-    .donate-button:hover { background: white; color: black; }
+    .donate-button:hover { background: white; color: black; 
+    }
+    .light-mode .donate-button {
+      border: 2px solid black; /* Light mode button border */
+      color: black; /* Light mode button text */
+    }
+    .light-mode .donate-button:hover {
+      background: black;
+      color: white;
+    }
     .email-form input[type="email"],
     .email-form input[type="submit"] {
       padding: 12px;
@@ -139,8 +155,19 @@
       background: black;
       color: white;
       margin-bottom: 10px;
+      }
+    .light-mode .email-form input[type="email"],
+    .light-mode .email-form input[type="submit"] {
+      border: 2px solid black; /* Light mode input border */
+      background: white; /* Light mode input bg */
+      color: black; /* Light mode text */
     }
-    .email-form input[type="submit"]:hover { background: white; color: black; }
+    .email-form input[type="submit"]:hover { background: white; color: black; 
+    }
+    .light-mode .email-form input[type="submit"]:hover {
+      background: black;
+      color: white;
+    }
     @media (min-width: 600px) {
       .member, .project { flex-direction: row; text-align: left; }
     }
