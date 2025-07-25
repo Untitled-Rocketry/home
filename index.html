@@ -9,32 +9,152 @@
     <meta name="author" content="Untitled Rocketry">
     <link rel="icon" href="Gemini_Generated_Image_5qqm2g5qqm2g5qqm.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-    <style>
-        html { scroll-behavior: smooth; }
-        body { background-color: black; color: white; font-family: 'Space Mono', monospace; margin: 0; padding: 0; transition: background 0.5s, color 0.5s; background-image: url('rocket_line_art.svg'); background-repeat: repeat; background-size: 300px; }
-        header { position: relative; height: 100vh; display: flex; justify-content: center; align-items: center; color: white; font-size: 3em; font-weight: bold; letter-spacing: 0.1em; text-align: center; overflow: hidden; }
-        nav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; background: black; border-bottom: 2px solid white; position: sticky; top: 0; z-index: 100; width: 100%; padding: 10px; }
-        nav a { color: white; text-decoration: none; padding: 15px 20px; font-weight: 400; transition: background 0.3s, color 0.3s; }
-        nav a:hover { background: white; color: black; }
-        #mode-toggle { background: none; border: none; cursor: pointer; font-size: 1.5em; color: white; transition: color 0.3s; margin-left: auto; padding: 15px 20px; }
-        section { padding: 60px 20px; max-width: 900px; margin: 0 auto; border-bottom: 2px solid white; }
-        h2 { font-size: 2em; margin-bottom: 20px; border-bottom: 1px solid white; display: inline-block; }
-        .member, .project { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 20px; }
-        @media (min-width: 600px) { .member, .project { flex-direction: row; gap: 20px; } }
-        .member img, .project img { width: 80%; max-width: 200px; height: auto; object-fit: cover; border: 2px solid white; }
-        .donate-button { background: none; border: 2px solid white; color: white; padding: 10px 20px; font-size: 1em; cursor: pointer; transition: background 0.3s, color 0.3s; width: 90%; max-width: 300px; }
-        .donate-button:hover { background: white; color: black; }
-        .email-form input[type="email"] { padding: 10px; width: 90%; max-width: 300px; border: 2px solid white; background: black; color: white; margin-bottom: 10px; }
-        .email-form input[type="submit"] { padding: 10px 20px; border: 2px solid white; background: black; color: white; cursor: pointer; transition: background 0.3s, color 0.3s; width: 90%; max-width: 300px; }
-        .email-form input[type="submit"]:hover { background: white; color: black; }
-        .light-mode { background-color: white; color: black; }
-        .light-mode nav { background: white; border-bottom: 2px solid black; }
-        .light-mode nav a { color: black; }
-        .light-mode nav a:hover { background: black; color: white; }
-        .light-mode #mode-toggle { color: black; }
-        .light-mode header { color: black; }
-        .light-mode .member img, .light-mode .project img, .light-mode .donate-button, .light-mode .email-form input[type="email"], .light-mode .email-form input[type="submit"] { border: 2px solid black; }
-    </style>
+ <style>
+html { scroll-behavior: smooth; }
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    padding: 0;
+    transition: background 0.5s, color 0.5s;
+    background-image: url('rocket_line_art.svg');
+    background-repeat: repeat;
+    background-size: 300px;
+    font-size: 16px; /* Base size for readability */
+}
+header {
+    position: relative;
+    height: 80vh; /* Slightly less for mobile comfort */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2.5em; /* Reduced for mobile readability */
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-align: center;
+    overflow: hidden;
+    padding: 20px;
+}
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    border-bottom: 2px solid white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    padding: 10px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+    font-weight: 400;
+    transition: background 0.3s, color 0.3s;
+    font-size: 1em;
+}
+nav a:hover { background: white; color: black; }
+#mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: white;
+    transition: color 0.3s;
+    margin-left: auto;
+    padding: 12px 16px;
+}
+section {
+    padding: 40px 16px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-bottom: 2px solid white;
+}
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 16px;
+    border-bottom: 1px solid white;
+    display: inline-block;
+}
+.member, .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.member img, .project img {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    border: 2px solid white;
+    max-height: 300px;
+}
+.donate-button {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    width: 90%;
+    max-width: 300px;
+}
+.donate-button:hover { background: white; color: black; }
+.email-form input[type="email"] {
+    padding: 12px;
+    width: 90%;
+    max-width: 300px;
+    border: 2px solid white;
+    background: black;
+    color: white;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+.email-form input[type="submit"] {
+    padding: 12px 20px;
+    border: 2px solid white;
+    background: black;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    width: 90%;
+    max-width: 300px;
+    font-size: 1em;
+}
+.email-form input[type="submit"]:hover { background: white; color: black; }
+
+/* Light mode adjustments */
+.light-mode { background-color: white; color: black; }
+.light-mode nav { background: white; border-bottom: 2px solid black; }
+.light-mode nav a { color: black; }
+.light-mode nav a:hover { background: black; color: white; }
+.light-mode #mode-toggle { color: black; }
+.light-mode header { color: black; }
+.light-mode .member img,
+.light-mode .project img,
+.light-mode .donate-button,
+.light-mode .email-form input[type="email"],
+.light-mode .email-form input[type="submit"] { border: 2px solid black; }
+
+/* Additional Media Queries for mobile */
+@media (min-width: 600px) {
+    .member, .project { flex-direction: row; gap: 20px; text-align: left; }
+}
+@media (max-width: 400px) {
+    header { font-size: 2em; }
+    h2 { font-size: 1.5em; }
+}
+</style>
+
 </head>
 <body>
 <nav role="navigation">
