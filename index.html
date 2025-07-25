@@ -1,228 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untitled Rocketry | High School Rocket Team</title>
-    <meta name="description" content="Untitled Rocketry is a high school team competing in the American Rocketry Challenge, advancing student rocketry and STEM outreach.">
-    <meta name="keywords" content="rocketry, high school, STEM, TARC, American Rocketry Challenge, 3D printing, student rocketry">
-    <meta name="author" content="Untitled Rocketry">
-    <link rel="icon" href="Gemini_Generated_Image_5qqm2g5qqm2g5qqm.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-    <style>
-        html { scroll-behavior: smooth; }
-        body {
-            background-color: black;
-            color: white;
-            font-family: 'Space Mono', monospace;
-            margin: 0;
-            padding: 0;
-            transition: background 0.5s, color 0.5s, margin-left 0.3s ease;
-            background-image: url('rocket_line_art.svg');
-            background-repeat: repeat;
-            background-size: 300px;
-            font-size: 16px;
-        }
-        body.sidebar-open {
-            margin-left: 200px;
-        }
-        header {
-            position: relative;
-            height: 80vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 2.5em;
-            font-weight: bold;
-            letter-spacing: 0.05em;
-            text-align: center;
-            overflow: hidden;
-            padding: 20px;
-        }
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 200px;
-            background: black;
-            border-right: 2px solid white;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding-top: 20px;
-            z-index: 100;
-            transition: transform 0.3s ease;
-        }
-        nav a, #mode-toggle, nav span {
-            color: white;
-            text-decoration: none;
-            padding: 15px 20px;
-            font-weight: 400;
-            transition: background 0.3s, color 0.3s;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        nav a:hover {
-            background: white;
-            color: black;
-        }
-        #mode-toggle {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.5em;
-            text-align: left;
-            margin-left: 0;
-        }
-        section {
-            padding: 40px 16px;
-            max-width: 900px;
-            margin: 0 auto;
-            border-bottom: 2px solid white;
-        }
-        h2 {
-            font-size: 1.8em;
-            margin-bottom: 16px;
-            border-bottom: 1px solid white;
-            display: inline-block;
-        }
-        .member, .project {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .member img, .project img {
-            width: 90%;
-            max-width: 300px;
-            height: auto;
-            object-fit: cover;
-            border: 2px solid white;
-            max-height: 300px;
-        }
-        .donate-button {
-            background: none;
-            border: 2px solid white;
-            color: white;
-            padding: 12px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background 0.3s, color 0.3s;
-            width: 90%;
-            max-width: 300px;
-        }
-        .donate-button:hover { background: white; color: black; }
-        .email-form input[type="email"], .email-form input[type="submit"] {
-            padding: 12px;
-            width: 90%;
-            max-width: 300px;
-            border: 2px solid white;
-            background: black;
-            color: white;
-            margin-bottom: 10px;
-            font-size: 1em;
-        }
-        .email-form input[type="submit"]:hover { background: white; color: black; }
-        .light-mode { background-color: white; color: black; }
-        .light-mode nav { background: white; border-right: 2px solid black; }
-        .light-mode nav a { color: black; }
-        .light-mode nav a:hover { background: black; color: white; }
-        .light-mode #mode-toggle, .light-mode #sidebar-toggle { color: black; }
-        .light-mode header { color: black; }
-        .light-mode .member img, .light-mode .project img, .light-mode .donate-button, .light-mode .email-form input[type="email"], .light-mode .email-form input[type="submit"] { border: 2px solid black; }
-        @media (max-width: 600px) {
-            nav {
-                transform: translateX(-220px);
-            }
-            nav.active {
-                transform: translateX(0);
-            }
-            body.sidebar-open {
-                margin-left: 0;
-            }
-            #sidebar-toggle {
-                display: block;
-            }
-        }
-        #sidebar-toggle {
-            display: none;
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            font-size: 2em;
-            background: none;
-            border: none;
-            color: white;
-            z-index: 200;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Untitled Rocketry | High School Rocket Team</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Space Mono', monospace;
+      margin: 0;
+      padding: 0;
+      transition: background 0.5s, color 0.5s;
+      background-image: url('rocket_line_art.svg');
+      background-repeat: repeat;
+      background-size: 300px;
+    }
+    header {
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5em;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 200px;
+      background: black;
+      border-right: 2px solid white;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 20px;
+      z-index: 100;
+      transition: transform 0.3s ease;
+    }
+    nav.hidden {
+      transform: translateX(-220px);
+    }
+    nav a, #mode-toggle, nav span {
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    nav a:hover {
+      background: white;
+      color: black;
+    }
+    #mode-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5em;
+      text-align: left;
+    }
+    #sidebar-toggle {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      font-size: 2em;
+      background: none;
+      border: none;
+      color: white;
+      z-index: 200;
+      cursor: pointer;
+    }
+    .light-mode {
+      background-color: white;
+      color: black;
+    }
+    .light-mode nav {
+      background: white;
+      border-right: 2px solid black;
+    }
+    .light-mode nav a {
+      color: black;
+    }
+    .light-mode nav a:hover {
+      background: black;
+      color: white;
+    }
+    .light-mode #mode-toggle,
+    .light-mode #sidebar-toggle {
+      color: black;
+    }
+    section {
+      padding: 40px 16px;
+      max-width: 900px;
+      margin: 0 auto;
+      border-bottom: 2px solid white;
+    }
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 16px;
+      border-bottom: 1px solid white;
+      display: inline-block;
+    }
+    .member, .project {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .member img, .project img {
+      width: 90%;
+      max-width: 300px;
+      border: 2px solid white;
+    }
+    .donate-button {
+      background: none;
+      border: 2px solid white;
+      color: white;
+      padding: 12px 20px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+      width: 90%;
+      max-width: 300px;
+    }
+    .donate-button:hover { background: white; color: black; }
+    .email-form input[type="email"],
+    .email-form input[type="submit"] {
+      padding: 12px;
+      width: 90%;
+      max-width: 300px;
+      border: 2px solid white;
+      background: black;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .email-form input[type="submit"]:hover { background: white; color: black; }
+    @media (min-width: 600px) {
+      .member, .project { flex-direction: row; text-align: left; }
+    }
+  </style>
 </head>
-<body class="sidebar-open">
-    <button id="sidebar-toggle" aria-label="Toggle menu">☰</button>
-    <nav role="navigation">
-        <a href="#mission">Mission</a>
-        <a href="#team">Team</a>
-        <a href="#projects">Projects</a>
-        <a href="#events">Events</a>
-        <a href="#donate">Donate</a>
-        <a href="#contact">Contact</a>
-        <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
-    </nav>
-    <header>UNTITLED ROCKETRY</header>
-    <section id="mission">
-        <h2>Mission Statement</h2>
-        <p>We are Untitled Rocketry, a high school team competing in the American Rocketry Challenge, building 3D printed rockets, advancing in high power rocketry, and pioneering liquid rocket development.</p>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <img src="images/3d_printed_rocket.jpg" alt="3D Printed Rocket">
-            <div><strong>3D Printed Rocket Series</strong><br>Building and testing fully 3D printed airframes for optimized weight and strength.</div>
-        </div>
-    </section>
-    <section id="team">
-        <h2>Team Members</h2>
-        <div class="member">
-            <img src="images/member1.jpg" alt="Alex - Team Lead">
-            <div><strong>Alex</strong><br>Team lead overseeing rocket design and launch logistics.</div>
-        </div>
-    </section>
-    <section id="events">
-        <h2>Upcoming Events</h2>
-        <ul>
-            <li>August 15, 2025 - TARC Test Launch</li>
-        </ul>
-    </section>
-    <section id="donate">
-        <h2>Donate</h2>
-        <p>Support Untitled Rocketry’s mission to advance high school rocketry innovation and STEM outreach.</p>
-        <button class="donate-button">Donate Now</button>
-    </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: untitledrocketry@example.com</p>
-        <form class="email-form">
-            <input type="email" placeholder="Enter your email" required>
-            <input type="submit" value="Subscribe">
-        </form>
-    </section>
-    <script>
-        const modeToggle = document.getElementById('mode-toggle');
-        modeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-            modeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
-        });
-        const sidebarToggle = document.getElementById('sidebar-toggle');
-        const nav = document.querySelector('nav');
-        sidebarToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            document.body.classList.toggle('sidebar-open');
-        });
-    </script>
+<body>
+
+<button id="sidebar-toggle" aria-label="Toggle menu">☰</button>
+
+<nav id="sidebar">
+  <a href="#mission">Mission</a>
+  <a href="#team">Team</a>
+  <a href="#projects">Projects</a>
+  <a href="#events">Events</a>
+  <a href="#donate">Donate</a>
+  <a href="#contact">Contact</a>
+  <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
+</nav>
+
+<header>UNTITLED ROCKETRY</header>
+
+<section id="mission">
+  <h2>Mission Statement</h2>
+  <p>We are Untitled Rocketry, a high school team competing in the American Rocketry Challenge...</p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project">
+    <img src="images/3d_printed_rocket.jpg" alt="3D Printed Rocket" />
+    <div><strong>3D Printed Rocket Series</strong><br>Fully 3D printed airframes for optimized weight and strength.</div>
+  </div>
+</section>
+
+<section id="team">
+  <h2>Team Members</h2>
+  <div class="member">
+    <img src="images/member1.jpg" alt="Alex - Team Lead" />
+    <div><strong>Alex</strong><br>Team lead overseeing rocket design.</div>
+  </div>
+</section>
+
+<section id="events">
+  <h2>Upcoming Events</h2>
+  <ul>
+    <li>August 15, 2025 - TARC Test Launch</li>
+  </ul>
+</section>
+
+<section id="donate">
+  <h2>Donate</h2>
+  <button class="donate-button">Donate Now</button>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: untitledrocketry@example.com</p>
+  <form class="email-form">
+    <input type="email" placeholder="Enter your email" required />
+    <input type="submit" value="Subscribe" />
+  </form>
+</section>
+
+<script>
+const modeToggle = document.getElementById('mode-toggle');
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebar = document.getElementById('sidebar');
+
+modeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+  modeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+});
+
+sidebarToggle.addEventListener('click', () => {
+  sidebar.classList.toggle('hidden');
+});
+</script>
+
 </body>
 </html>
