@@ -19,14 +19,28 @@
       background-size: 300px;
     }
     header {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 4em;
-      font-weight: bold;
-      text-align: center;
-      padding: 20px;
+    height: 100vh; /* take up full screen */
+    display: flex;
+    flex-direction: column; /* stack title and slogan */
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    }
+    
+    header .title {
+        font-size: 2.5em;
+    }
+    
+    header .slogan {
+        font-size: 1.2em;
+        font-weight: normal;
+        margin-top: 10px;
+        color: #ccc; /* lighter gray for contrast */
+    }
+    .light-mode header .slogan {
+        color: #333; /* dark gray in light mode */
     }
     nav {
       position: fixed;
@@ -198,8 +212,12 @@
   <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
 </nav>
 
-<header>UNTITLED ROCKETRY</header>
+<header>
+    <div class="title">UNTITLED ROCKETRY</div>
+    <div class="slogan">If we don't know what we're doing, neither can you.</div>
+</header>
 
+  
 <section id="mission" class="fade-in-section">
   <h2>Mission Statement</h2>
   <p>We are Untitled Rocketry, a high school team competing in the American Rocketry Challenge...</p>
