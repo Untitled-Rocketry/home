@@ -9,296 +9,220 @@
     <meta name="author" content="Untitled Rocketry">
     <link rel="icon" href="Gemini_Generated_Image_5qqm2g5qqm2g5qqm.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
- <style>
-html { scroll-behavior: smooth; }
-body {
-    background-color: black;
-    color: white;
-    font-family: 'Space Mono', monospace;
-    margin: 0;
-    padding: 0;
-    transition: background 0.5s, color 0.5s, margin-left 0.3s ease;
-    background-image: url('rocket_line_art.svg');
-    background-repeat: repeat;
-    background-size: 300px;
-    font-size: 16px;
-}
-body.sidebar-open {
-    margin-left: 200px;
-}
-
-header {
-    position: relative;
-    height: 80vh; /* Slightly less for mobile comfort */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 2.5em; /* Reduced for mobile readability */
-    font-weight: bold;
-    letter-spacing: 0.05em;
-    text-align: center;
-    overflow: hidden;
-    padding: 20px;
-}
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 200px; /* adjust as needed */
-    background: black;
-    border-right: 2px solid white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 20px;
-    z-index: 100;
-}
-
-nav a, #mode-toggle, nav span {
-    color: white;
-    text-decoration: none;
-    padding: 15px 20px;
-    font-weight: 400;
-    transition: background 0.3s, color 0.3s;
-    width: 100%; /* make links span sidebar */
-    box-sizing: border-box;
-}
-
-nav a:hover {
-    background: white;
-    color: black;
-}
-
-#mode-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5em;
-    text-align: left;
-    margin-left: 0;
-
-}
-section {
-    padding: 40px 16px;
-    max-width: 900px;
-    margin: 0 auto;
-    border-bottom: 2px solid white;
-}
-h2 {
-    font-size: 1.8em;
-    margin-bottom: 16px;
-    border-bottom: 1px solid white;
-    display: inline-block;
-}
-.member, .project {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-.member img, .project img {
-    width: 90%;
-    max-width: 300px;
-    height: auto;
-    object-fit: cover;
-    border: 2px solid white;
-    max-height: 300px;
-}
-.donate-button {
-    background: none;
-    border: 2px solid white;
-    color: white;
-    padding: 12px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-    width: 90%;
-    max-width: 300px;
-}
-.donate-button:hover { background: white; color: black; }
-.email-form input[type="email"] {
-    padding: 12px;
-    width: 90%;
-    max-width: 300px;
-    border: 2px solid white;
-    background: black;
-    color: white;
-    margin-bottom: 10px;
-    font-size: 1em;
-}
-.email-form input[type="submit"] {
-    padding: 12px 20px;
-    border: 2px solid white;
-    background: black;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-    width: 90%;
-    max-width: 300px;
-    font-size: 1em;
-}
-.email-form input[type="submit"]:hover { background: white; color: black; }
-
-/* Light mode adjustments */
-.light-mode { background-color: white; color: black; }
-.light-mode nav { background: white; border-bottom: 2px solid black; }
-.light-mode nav a { color: black; }
-.light-mode nav a:hover { background: black; color: white; }
-.light-mode #mode-toggle { color: black; }
-.light-mode header { color: black; }
-.light-mode .member img,
-.light-mode .project img,
-.light-mode .donate-button,
-.light-mode .email-form input[type="email"],
-.light-mode .email-form input[type="submit"] { border: 2px solid black; }
-
-/* Additional Media Queries for mobile */
-@media (min-width: 600px) {
-    .member, .project { flex-direction: row; gap: 20px; text-align: left; }
-}
-@media (max-width: 400px) {
-    header { font-size: 2em; }
-    h2 { font-size: 1.5em; }
-}
-
-@media (max-width: 600px) {
-    #sidebar-toggle {
-        display: block; /* show hamburger */
-    }
-    nav {
-        transform: translateX(-220px); /* hide sidebar off screen */
-        transition: transform 0.3s ease;
-    }
-    nav.active {
-        transform: translateX(0); /* show sidebar */
-    }
-    body {
-    margin-left: 0;
-    }
-    body.sidebar-open {
-        margin-left: 0;
-    }
-
-}
-
-#sidebar-toggle {
-    display: none; /* hidden on desktop */
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    font-size: 2em;
-    background: none;
-    border: none;
-    color: white;
-    z-index: 200;
-    cursor: pointer;
-}
-.light-mode #sidebar-toggle {
-    color: black;
-}
-
-</style>
-
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Space Mono', monospace;
+            margin: 0;
+            padding: 0;
+            transition: background 0.5s, color 0.5s, margin-left 0.3s ease;
+            background-image: url('rocket_line_art.svg');
+            background-repeat: repeat;
+            background-size: 300px;
+            font-size: 16px;
+        }
+        body.sidebar-open {
+            margin-left: 200px;
+        }
+        header {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            text-align: center;
+            overflow: hidden;
+            padding: 20px;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 200px;
+            background: black;
+            border-right: 2px solid white;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-top: 20px;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+        nav a, #mode-toggle, nav span {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: 400;
+            transition: background 0.3s, color 0.3s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        nav a:hover {
+            background: white;
+            color: black;
+        }
+        #mode-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5em;
+            text-align: left;
+            margin-left: 0;
+        }
+        section {
+            padding: 40px 16px;
+            max-width: 900px;
+            margin: 0 auto;
+            border-bottom: 2px solid white;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 16px;
+            border-bottom: 1px solid white;
+            display: inline-block;
+        }
+        .member, .project {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .member img, .project img {
+            width: 90%;
+            max-width: 300px;
+            height: auto;
+            object-fit: cover;
+            border: 2px solid white;
+            max-height: 300px;
+        }
+        .donate-button {
+            background: none;
+            border: 2px solid white;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            width: 90%;
+            max-width: 300px;
+        }
+        .donate-button:hover { background: white; color: black; }
+        .email-form input[type="email"], .email-form input[type="submit"] {
+            padding: 12px;
+            width: 90%;
+            max-width: 300px;
+            border: 2px solid white;
+            background: black;
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        .email-form input[type="submit"]:hover { background: white; color: black; }
+        .light-mode { background-color: white; color: black; }
+        .light-mode nav { background: white; border-right: 2px solid black; }
+        .light-mode nav a { color: black; }
+        .light-mode nav a:hover { background: black; color: white; }
+        .light-mode #mode-toggle, .light-mode #sidebar-toggle { color: black; }
+        .light-mode header { color: black; }
+        .light-mode .member img, .light-mode .project img, .light-mode .donate-button, .light-mode .email-form input[type="email"], .light-mode .email-form input[type="submit"] { border: 2px solid black; }
+        @media (max-width: 600px) {
+            nav {
+                transform: translateX(-220px);
+            }
+            nav.active {
+                transform: translateX(0);
+            }
+            body.sidebar-open {
+                margin-left: 0;
+            }
+            #sidebar-toggle {
+                display: block;
+            }
+        }
+        #sidebar-toggle {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            font-size: 2em;
+            background: none;
+            border: none;
+            color: white;
+            z-index: 200;
+            cursor: pointer;
+        }
+    </style>
 </head>
-
 <body class="sidebar-open">
     <button id="sidebar-toggle" aria-label="Toggle menu">☰</button>
-
-
-    
-<nav role="navigation">
-    <a href="#mission">Mission</a>
-    <a href="#team">Team</a>
-    <a href="#projects">Projects</a>
-    <a href="#events">Events</a>
-    <a href="#donate">Donate</a>
-    <a href="#contact">Contact</a>
-    <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
-</nav>
-
-<header>UNTITLED ROCKETRY</header>
-
-<section id="mission">
-    <h2>Mission Statement</h2>
-    <p>We are Untitled Rocketry, a high school team competing in the American Rocketry Challenge, building 3D printed rockets, advancing in high power rocketry, and pioneering liquid rocket development. We have been national finalists for 2 years running, dedicated to pushing the boundaries of student rocketry with precision, creativity, and innovation.</p>
-</section>
-
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-        <img src="images/3d_printed_rocket.jpg" alt="3D Printed Rocket">
-        <div><strong>3D Printed Rocket Series</strong><br>Building and testing fully 3D printed airframes for optimized weight and strength.</div>
-    </div>
-    <div class="project">
-        <img src="images/liquid_rocket.jpg" alt="Liquid Rocket Development">
-        <div><strong>Liquid Rocket Development</strong><br>Designing and testing liquid propulsion systems for high-altitude and experimental rocketry.</div>
-    </div>
-    <div class="project">
-        <img src="images/tarc.jpg" alt="American Rocketry Challenge">
-        <div><strong>American Rocketry Challenge</strong><br>Competing with thousands of teams across the country for accuracy and precision.</div>
-    </div>
-    <div class="project">
-        <img src="images/level1.jpg" alt="Level 1 Certification">
-        <div><strong>Level 1 Certification</strong><br>Building and launching the most powerful rockets we can.</div>
-    </div>
-</section>
-
-<section id="team">
-    <h2>Team Members</h2>
-    <div class="member">
-        <img src="images/member1.jpg" alt="Alex - Team Lead">
-        <div><strong>Alex</strong><br>Team lead overseeing rocket design and launch logistics.</div>
-    </div>
-    <div class="member">
-        <img src="images/member2.jpg" alt="Jamie - Propulsion Specialist">
-        <div><strong>Jamie</strong><br>Propulsion specialist focusing on liquid and hybrid engines.</div>
-    </div>
-</section>
-
-<section id="events">
-    <h2>Upcoming Events</h2>
-    <ul>
-        <li>August 15, 2025 - TARC Test Launch</li>
-        <li>September 5, 2025 - High Power Launch Day</li>
-        <li>October 12, 2025 - Outreach Workshop for Middle School Students</li>
-    </ul>
-</section>
-
-<section id="donate">
-    <h2>Donate</h2>
-    <p>Support Untitled Rocketry’s mission to advance high school rocketry innovation and STEM outreach. Your contributions help us fund materials, travel, and testing for our projects and competitions.</p>
-    <button class="donate-button" onclick="window.location.href='https://your-donation-link.com'">Donate Now</button>
-</section>
-
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: untitledrocketry@example.com</p>
-    <form class="email-form" action="https://example.com/subscribe" method="POST">
-        <label for="email">Subscribe to our mailing list:</label><br><br>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        <input type="submit" value="Subscribe">
-    </form>
-</section>
-
-<script>
-const modeToggle = document.getElementById('mode-toggle');
-modeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    modeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
-});
-
-const sidebarToggle = document.getElementById('sidebar-toggle');
-const nav = document.querySelector('nav');
-sidebarToggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    document.body.classList.toggle('sidebar-open');
-});
-
-</script>
-
+    <nav role="navigation">
+        <a href="#mission">Mission</a>
+        <a href="#team">Team</a>
+        <a href="#projects">Projects</a>
+        <a href="#events">Events</a>
+        <a href="#donate">Donate</a>
+        <a href="#contact">Contact</a>
+        <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
+    </nav>
+    <header>UNTITLED ROCKETRY</header>
+    <section id="mission">
+        <h2>Mission Statement</h2>
+        <p>We are Untitled Rocketry, a high school team competing in the American Rocketry Challenge, building 3D printed rockets, advancing in high power rocketry, and pioneering liquid rocket development.</p>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <img src="images/3d_printed_rocket.jpg" alt="3D Printed Rocket">
+            <div><strong>3D Printed Rocket Series</strong><br>Building and testing fully 3D printed airframes for optimized weight and strength.</div>
+        </div>
+    </section>
+    <section id="team">
+        <h2>Team Members</h2>
+        <div class="member">
+            <img src="images/member1.jpg" alt="Alex - Team Lead">
+            <div><strong>Alex</strong><br>Team lead overseeing rocket design and launch logistics.</div>
+        </div>
+    </section>
+    <section id="events">
+        <h2>Upcoming Events</h2>
+        <ul>
+            <li>August 15, 2025 - TARC Test Launch</li>
+        </ul>
+    </section>
+    <section id="donate">
+        <h2>Donate</h2>
+        <p>Support Untitled Rocketry’s mission to advance high school rocketry innovation and STEM outreach.</p>
+        <button class="donate-button">Donate Now</button>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: untitledrocketry@example.com</p>
+        <form class="email-form">
+            <input type="email" placeholder="Enter your email" required>
+            <input type="submit" value="Subscribe">
+        </form>
+    </section>
+    <script>
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            modeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+        });
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const nav = document.querySelector('nav');
+        sidebarToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            document.body.classList.toggle('sidebar-open');
+        });
+    </script>
 </body>
 </html>
