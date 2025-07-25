@@ -200,12 +200,12 @@
 
 <header>UNTITLED ROCKETRY</header>
 
-<section id="mission">
+<section id="mission" class="fade-in-section">
   <h2>Mission Statement</h2>
   <p>We are Untitled Rocketry, a high school team competing in the American Rocketry Challenge...</p>
 </section>
 
-<section id="projects">
+<section id="projects" class="fade-in-section">
   <h2>Projects</h2>
   <div class="project">
     <img src="images/3d_printed_rocket.jpg" alt="3D Printed Rocket" />
@@ -213,7 +213,7 @@
   </div>
 </section>
 
-<section id="team">
+<section id="team" class="fade-in-section">
   <h2>Team Members</h2>
   <div class="member">
     <img src="images/member1.jpg" alt="Alex - Team Lead" />
@@ -221,19 +221,19 @@
   </div>
 </section>
 
-<section id="events">
+<section id="events" class="fade-in-section">
   <h2>Upcoming Events</h2>
   <ul>
     <li>August 15, 2025 - TARC Test Launch</li>
   </ul>
 </section>
 
-<section id="donate">
+<section id="donate" class="fade-in-section">
   <h2>Donate</h2>
   <button class="donate-button">Donate Now</button>
 </section>
 
-<section id="contact">
+<section id="contact" class="fade-in-section">
   <h2>Contact Us</h2>
   <p>Email: untitledrocketry@example.com</p>
   <form class="email-form">
@@ -257,5 +257,27 @@ sidebarToggle.addEventListener('click', () => {
 });
 </script>
 
+<script>
+// Fade-in on scroll
+const faders = document.querySelectorAll('.fade-in-section');
+const options = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // fade in only once
+        }
+    });
+}, options);
+
+faders.forEach(section => {
+    observer.observe(section);
+});
+</script>
+
+  
 </body>
 </html>
