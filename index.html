@@ -1,57 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Untitled Rocketry | High School Rocket Team</title>
-<meta name="description" content="Untitled Rocketry is a high school team competing in the American Rocketry Challenge, advancing student rocketry and STEM outreach.">
-<meta name="keywords" content="rocketry, high school, STEM, TARC, American Rocketry Challenge, 3D printing, student rocketry">
-<meta name="author" content="Untitled Rocketry">
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-<style>
-html { scroll-behavior: smooth; }
-body { background-color: black; color: white; font-family: 'Space Mono', monospace; margin: 0; padding: 0; transition: background 0.5s, color 0.5s; }
-header { padding: 60px 20px; text-align: center; font-size: 2em; font-weight: bold; }
-nav { background: black; border-bottom: 2px solid white; position: sticky; top: 0; z-index: 100; }
-.nav-container { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; }
-.nav-links { display: flex; flex-direction: column; gap: 10px; display: none; }
-.nav-links.show { display: flex; }
-.nav-links a { color: white; text-decoration: none; padding: 10px; font-size: 1.1em; }
-.nav-toggle { background: none; border: 2px solid white; color: white; padding: 10px; font-size: 1.5em; cursor: pointer; }
-@media (min-width: 700px) { .nav-links { display: flex; flex-direction: row; gap: 20px; } .nav-toggle { display: none; } }
-section { padding: 40px 20px; max-width: 600px; margin: auto; }
-h2 { font-size: 1.5em; margin-bottom: 20px; border-bottom: 1px solid white; display: inline-block; }
-.project img, .member img { width: 100%; max-width: 300px; height: auto; border: 2px solid white; }
-.donate-button, .email-form input[type='submit'] { width: 100%; padding: 15px; font-size: 1.1em; }
-.email-form input[type='email'] { width: 100%; padding: 15px; font-size: 1.1em; margin-bottom: 10px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled Rocketry | High School Rocket Team</title>
+    <meta name="description" content="Untitled Rocketry is a high school team competing in the American Rocketry Challenge, advancing student rocketry and STEM outreach.">
+    <meta name="keywords" content="rocketry, high school, STEM, TARC, American Rocketry Challenge, 3D printing, student rocketry">
+    <meta name="author" content="Untitled Rocketry">
+    <link rel="icon" href="Gemini_Generated_Image_5qqm2g5qqm2g5qqm.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: black; color: white; font-family: 'Space Mono', monospace; margin: 0; padding: 0; transition: background 0.5s, color 0.5s; background-image: url('rocket_line_art.svg'); background-repeat: repeat; background-size: 300px; }
+        header { position: relative; height: 100vh; display: flex; justify-content: center; align-items: center; color: white; font-size: 3em; font-weight: bold; letter-spacing: 0.1em; text-align: center; overflow: hidden; }
+        nav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; background: black; border-bottom: 2px solid white; position: sticky; top: 0; z-index: 100; width: 100%; padding: 10px; }
+        nav a { color: white; text-decoration: none; padding: 15px 20px; font-weight: 400; transition: background 0.3s, color 0.3s; }
+        nav a:hover { background: white; color: black; }
+        #mode-toggle { background: none; border: none; cursor: pointer; font-size: 1.5em; color: white; transition: color 0.3s; margin-left: auto; padding: 15px 20px; }
+        section { padding: 60px 20px; max-width: 900px; margin: 0 auto; border-bottom: 2px solid white; }
+        h2 { font-size: 2em; margin-bottom: 20px; border-bottom: 1px solid white; display: inline-block; }
+        .member, .project { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 20px; }
+        @media (min-width: 600px) { .member, .project { flex-direction: row; gap: 20px; } }
+        .member img, .project img { width: 80%; max-width: 200px; height: auto; object-fit: cover; border: 2px solid white; }
+        .donate-button { background: none; border: 2px solid white; color: white; padding: 10px 20px; font-size: 1em; cursor: pointer; transition: background 0.3s, color 0.3s; width: 90%; max-width: 300px; }
+        .donate-button:hover { background: white; color: black; }
+        .email-form input[type="email"] { padding: 10px; width: 90%; max-width: 300px; border: 2px solid white; background: black; color: white; margin-bottom: 10px; }
+        .email-form input[type="submit"] { padding: 10px 20px; border: 2px solid white; background: black; color: white; cursor: pointer; transition: background 0.3s, color 0.3s; width: 90%; max-width: 300px; }
+        .email-form input[type="submit"]:hover { background: white; color: black; }
+        .light-mode { background-color: white; color: black; }
+        .light-mode nav { background: white; border-bottom: 2px solid black; }
+        .light-mode nav a { color: black; }
+        .light-mode nav a:hover { background: black; color: white; }
+        .light-mode #mode-toggle { color: black; }
+        .light-mode header { color: black; }
+        .light-mode .member img, .light-mode .project img, .light-mode .donate-button, .light-mode .email-form input[type="email"], .light-mode .email-form input[type="submit"] { border: 2px solid black; }
+    </style>
 </head>
 <body>
-<nav>
-  <div class="nav-container">
-    <div style="font-weight: bold;">UNTITLED ROCKETRY</div>
-    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰</button>
-    <div class="nav-links">
-      <a href="#mission">Mission</a>
-      <a href="#team">Team</a>
-      <a href="#projects">Projects</a>
-      <a href="#events">Events</a>
-      <a href="#donate">Donate</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
+<nav role="navigation">
+    <span style="font-weight:bold; padding: 15px 20px;">UNTITLED ROCKETRY</span>
+    <a href="#mission">Mission</a>
+    <a href="#team">Team</a>
+    <a href="#projects">Projects</a>
+    <a href="#events">Events</a>
+    <a href="#donate">Donate</a>
+    <a href="#contact">Contact</a>
+    <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
 </nav>
-<header>UNTITLED ROCKETRY</header>
-<section id="mission"><h2>Mission Statement</h2><p>We are Untitled Rocketry...</p></section>
-<section id="projects"><h2>Projects</h2><div class="project"><img src="images/3d_printed_rocket.jpg" alt="3D Printed Rocket"><div>...</div></div></section>
-<section id="team"><h2>Team Members</h2><div class="member"><img src="images/member1.jpg" alt="Alex"><div>...</div></div></section>
-<section id="events"><h2>Upcoming Events</h2><ul><li>Event 1</li></ul></section>
-<section id="donate"><h2>Donate</h2><button class="donate-button">Donate Now</button></section>
-<section id="contact"><h2>Contact Us</h2><form class="email-form"><input type="email" placeholder="Enter your email"><input type="submit" value="Subscribe"></form></section>
-<script>const modeToggle = document.getElementById('mode-toggle'); if(modeToggle){modeToggle.addEventListener('click',()=>{document.body.classList.toggle('light-mode');});}</script>
-</body>
-</html>
-
 
 <header>UNTITLED ROCKETRY</header>
 
