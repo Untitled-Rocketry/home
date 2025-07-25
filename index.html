@@ -17,13 +17,16 @@ body {
     font-family: 'Space Mono', monospace;
     margin: 0;
     padding: 0;
-    transition: background 0.5s, color 0.5s;
+    transition: background 0.5s, color 0.5s, margin-left 0.3s ease;
     background-image: url('rocket_line_art.svg');
     background-repeat: repeat;
     background-size: 300px;
-    font-size: 16px; /* Base size for readability */
-    margin-left: 200px; /* added for sidebar space */
+    font-size: 16px;
 }
+body.sidebar-open {
+    margin-left: 200px;
+}
+
 header {
     position: relative;
     height: 80vh; /* Slightly less for mobile comfort */
@@ -174,8 +177,12 @@ h2 {
         transform: translateX(0); /* show sidebar */
     }
     body {
+    margin-left: 0;
+    }
+    body.sidebar-open {
         margin-left: 0;
     }
+
 }
 
 #sidebar-toggle {
@@ -200,6 +207,8 @@ h2 {
 <body>
 
 <button id="sidebar-toggle" aria-label="Toggle menu">☰</button>
+<body class="sidebar-open">
+
     
 <nav role="navigation">
     <a href="#mission">Mission</a>
@@ -286,6 +295,7 @@ const sidebarToggle = document.getElementById('sidebar-toggle');
 const nav = document.querySelector('nav');
 sidebarToggle.addEventListener('click', () => {
     nav.classList.toggle('active');
+    document.body.classList.toggle('sidebar-open');
 });
 
 </script>
