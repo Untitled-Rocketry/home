@@ -45,6 +45,19 @@
     </style>
 </head>
 <body>
+    
+<button class="nav-toggle" aria-label="Toggle navigation menu" id="navToggle">☰</button>
+    
+<script>
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.querySelector('.nav-links');
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+</script>
+
+
+    
 <nav role="navigation">
     <span style="font-weight:bold; padding: 15px 20px;">UNTITLED ROCKETRY</span>
     <a href="#mission">Mission</a>
@@ -55,15 +68,7 @@
     <a href="#contact">Contact</a>
     <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
 </nav>
-<script>
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.querySelector('.nav-links');
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
-</script>
 
-<button class="nav-toggle" aria-label="Toggle navigation menu" id="navToggle">☰</button>
     
 <header>UNTITLED ROCKETRY</header>
 
