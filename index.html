@@ -164,24 +164,44 @@ h2 {
 }
 
 @media (max-width: 600px) {
+    #sidebar-toggle {
+        display: block; /* show hamburger */
+    }
     nav {
-        position: sticky;
-        height: auto;
-        width: 100%;
-        flex-direction: row;
-        align-items: center;
-        border-right: none;
-        border-bottom: 2px solid white;
+        transform: translateX(-220px); /* hide sidebar off screen */
+        transition: transform 0.3s ease;
+    }
+    nav.active {
+        transform: translateX(0); /* show sidebar */
     }
     body {
         margin-left: 0;
     }
 }
 
+#sidebar-toggle {
+    display: none; /* hidden on desktop */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 2em;
+    background: none;
+    border: none;
+    color: white;
+    z-index: 200;
+    cursor: pointer;
+}
+.light-mode #sidebar-toggle {
+    color: black;
+}
+
 </style>
 
 </head>
 <body>
+
+<button id="sidebar-toggle" aria-label="Toggle menu">☰</button>
+    
 <nav role="navigation">
     <span style="font-weight:bold; padding: 15px 20px;">UNTITLED ROCKETRY</span>
     <a href="#mission">Mission</a>
@@ -263,6 +283,13 @@ modeToggle.addEventListener('click', () => {
     document.body.classList.toggle('light-mode');
     modeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
 });
+
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const nav = document.querySelector('nav');
+sidebarToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
+
 </script>
 
 </body>
