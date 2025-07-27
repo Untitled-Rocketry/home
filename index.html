@@ -133,10 +133,31 @@ nav a:hover {
 
 /* === ADD MEDIA QUERIES BELOW === */
 
-/* 👇 Step A: Mobile view (max 767px): show sidebar */
+/* Default: hide sidebar */
+#sidebar {
+  display: none;
+}
+
+/* Mobile: show sidebar and use vertical layout */
 @media (max-width: 767px) {
-  nav {
-    display: flex; /* show the sidebar */
+  #sidebar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 200px;
+    background: black;
+    border-left: 2px solid white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 20px;
+    z-index: 100;
+    transition: transform 0.3s ease;
+  }
+
+  #sidebar.hidden {
+    transform: translateX(220px); /* slide off screen */
   }
 
   #sidebar-toggle {
@@ -144,9 +165,10 @@ nav a:hover {
   }
 }
 
-/* 👇 Step B: Desktop view (768px+): top nav bar */
+/* Desktop: show nav as bar on top */
 @media (min-width: 768px) {
-  nav {
+  #sidebar {
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -159,7 +181,14 @@ nav a:hover {
     border-left: none;
     border-bottom: 2px solid white;
     padding: 10px 0;
+    transform: none !important; /* override slide-in */
   }
+
+  #sidebar-toggle {
+    display: none; /* hide hamburger */
+  }
+}
+
 
   nav.hidden {
     transform: translateY(-100px); /* optional: slide up to hide */
@@ -304,18 +333,7 @@ nav a:hover {
 
 <button id="sidebar-toggle" aria-label="Toggle menu">☰</button>
 
-<nav id="sidebar" class="mobile-nav hidden">
-  <a href="index.html">Home</a>
-  <a href="team.html">Team</a>
-  <a href="projects.html">Projects</a>
-  <a href="launches.html">Launches</a>
-  <a href="support.html">Donate</a>
-  <a href="contact.html">Contact</a>
-  <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
-</nav>
-
-
-<nav class="desktop-nav">  
+<nav id="sidebar" class="hidden">
   <a href="index.html">Home</a>
   <a href="team.html">Team</a>
   <a href="projects.html">Projects</a>
@@ -419,14 +437,6 @@ faders.forEach(section => {
 });
 </script>
   
-<script>
-  const sidebar = document.getElementById('sidebar');
-  const sidebarToggle = document.getElementById('sidebar-toggle');
-
-  sidebarToggle.addEventListener('click', () => {
-    sidebar.classList.toggle('hidden');
-  });
-</script>
 
   
 </body>
