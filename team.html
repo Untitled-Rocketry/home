@@ -203,17 +203,17 @@
       gap: 16px;
       margin: 20px 0;
     }
-    .social-links img {
+      .social-links img {
       width: 32px;
       height: 32px;
-      filter: invert(1); /* makes icons white in dark mode */
+      filter: grayscale(100%); /* makes icons white in dark mode */
       transition: transform 0.2s ease;
     }
     .social-links img:hover {
       transform: scale(1.1);
     }
     .light-mode .social-links img {
-      filter: invert(0); /* makes icons dark in light mode */
+      filter: none; /* makes icons dark in light mode */
     }
     
     footer {
@@ -275,9 +275,6 @@
     </a>
     <a href="https://twitter.com" target="_blank" aria-label="Twitter">
       <img src="twitter.svg" alt="Twitter" />
-    </a>
-    <a href="https://github.com" target="_blank" aria-label="GitHub">
-      <img src="github.svg" alt="GitHub" />
     </a>
   </div>
 
