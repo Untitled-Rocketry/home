@@ -215,6 +215,43 @@
     .light-mode .social-links img {
       filter: none; /* makes icons dark in light mode */
     }
+
+    @media (min-width: 768px) {
+    /* Hide the mobile menu button on desktop */
+    #menu-toggle {
+      display: none;
+    }
+  
+    /* Convert the sidebar into a top navigation bar */
+    nav {
+      position: static; /* No longer fixed to the side */
+      flex-direction: row; /* Arrange items horizontally */
+      justify-content: center; /* Center the links */
+      align-items: center; /* Vertically align items */
+      width: 100%;
+      height: auto;
+      border-left: none; /* Remove side border */
+      border-bottom: 2px solid white; /* Add bottom border */
+      transform: none !important; /* IMPORTANT: Override the .hidden class */
+      padding-top: 0; /* Reset mobile padding */
+    }
+  
+    /* Make nav links fit horizontally */
+    nav a, #mode-toggle {
+      width: auto;
+      padding: 20px 15px;
+    }
+  
+    /* Style the header to appear below the new top nav */
+    header {
+      height: calc(100vh - 62px); /* Adjust vh to account for nav height */
+    }
+  
+    /* Light mode overrides for the desktop nav */
+    .light-mode nav {
+      border-bottom: 2px solid black;
+    }
+  }
     
     footer {
       text-align: center;
@@ -226,14 +263,14 @@
       border-top: 1px solid black;
       color: black;
     }
-
+    
   </style>
 </head>
 <body>
 
-<button id="sidebar-toggle" aria-label="Toggle menu">☰</button>
+<button id="menu-toggle" aria-label="Toggle menu">☰</button>
 
-<nav id="sidebar" class="hidden">
+<nav id="navbar" class="hidden">
   <a href="index.html">Home</a>
   <a href="team.html">Team</a>
   <a href="projects.html">Projects</a>
@@ -302,8 +339,8 @@
 
 <script>
 const modeToggle = document.getElementById('mode-toggle');
-const sidebarToggle = document.getElementById('sidebar-toggle');
-const sidebar = document.getElementById('sidebar');
+const sidebarToggle = document.getElementById('menu-toggle');
+const sidebar = document.getElementById('navbar');
 
 modeToggle.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
