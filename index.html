@@ -44,72 +44,139 @@
     .light-mode header .slogan {
         color: #333; /* dark gray in light mode */
     }
-    nav {
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 100vh;
-      background: black;
-      border-left: 2px solid white;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding-top: 20px;
-      z-index: 100;
-      transition: transform 0.3s ease;
-    }
-    nav.hidden {
-      transform: translateX(220px);
-    }
-    nav a, #mode-toggle, nav span {
-      color: white;
-      text-decoration: none;
-      padding: 15px 20px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    nav a:hover {
-      background: white;
-      color: black;
-    }
-    #mode-toggle {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1.5em;
-      text-align: left;
-    }
-    #sidebar-toggle {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      font-size: 2em;
-      background: none;
-      border: none;
-      color: white;
-      z-index: 200;
-      cursor: pointer;
-    }
-    .light-mode {
-      background-color: white;
-      color: black;
-    }
-    .light-mode nav {
-      background: white;
-      border-left: 2px solid black;
-    }
-    .light-mode nav a {
-      color: black;
-    }
-    .light-mode nav a:hover {
-      background: black;
-      color: white;
-    }
-    .light-mode #mode-toggle,
-    .light-mode #sidebar-toggle {
-      color: black;
-    }
+  /* === SIDEBAR FOR MOBILE === */
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 200px;
+  background: black;
+  border-left: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 20px;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+/* Hide the sidebar when not toggled */
+nav.hidden {
+  transform: translateX(220px);
+}
+
+/* === SHARED NAVIGATION STYLES === */
+nav a,
+#mode-toggle,
+nav span {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+nav a:hover {
+  background: white;
+  color: black;
+}
+
+#mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  text-align: left;
+}
+
+#sidebar-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 2em;
+  background: none;
+  border: none;
+  color: white;
+  z-index: 200;
+  cursor: pointer;
+}
+
+/* === LIGHT MODE COLORS === */
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.light-mode nav {
+  background: white;
+  border-left: 2px solid black;
+}
+
+.light-mode nav a {
+  color: black;
+}
+
+.light-mode nav a:hover {
+  background: black;
+  color: white;
+}
+
+.light-mode #mode-toggle,
+.light-mode #sidebar-toggle {
+  color: black;
+}
+
+/* === ADD MEDIA QUERIES BELOW === */
+
+/* 👇 Step A: Mobile view (max 767px): show sidebar */
+@media (max-width: 767px) {
+  nav {
+    display: flex; /* show the sidebar */
+  }
+
+  #sidebar-toggle {
+    display: block;
+  }
+}
+
+/* 👇 Step B: Desktop view (768px+): top nav bar */
+@media (min-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-left: none;
+    border-bottom: 2px solid white;
+    padding: 10px 0;
+  }
+
+  nav.hidden {
+    transform: translateY(-100px); /* optional: slide up to hide */
+  }
+
+  nav a,
+  #mode-toggle {
+    width: auto;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  #sidebar-toggle {
+    display: none; /* hide hamburger on desktop */
+  }
+
+  .light-mode nav {
+    border-bottom: 2px solid black;
+  }
+}
+
     section {
       padding: 40px 16px;
       max-width: 900px;
@@ -231,9 +298,20 @@
 </head>
 <body>
 
-<button id="sidebar-toggle" aria-label="Toggle menu">☰</button>
+<nav class="mobile-nav">  
+  <button id="sidebar-toggle" aria-label="Toggle menu">☰</button>
+  <div id="sidebar" class="hidden">
+    <a href="index.html">Home</a>
+    <a href="team.html">Team</a>
+    <a href="projects.html">Projects</a>
+    <a href="launches.html">Launches</a>
+    <a href="support.html">Donate</a>
+    <a href="contact.html">Contact</a>
+    <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
+  </div>
+</nav>
 
-<nav id="sidebar" class="hidden">
+<nav class="desktop-nav">  
   <a href="index.html">Home</a>
   <a href="team.html">Team</a>
   <a href="projects.html">Projects</a>
@@ -242,6 +320,7 @@
   <a href="contact.html">Contact</a>
   <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
 </nav>
+
 
 <header>
     <div class="title">UNTITLED ROCKETRY</div>
