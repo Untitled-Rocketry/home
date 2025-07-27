@@ -224,7 +224,10 @@
   
     /* Convert the sidebar into a top navigation bar */
     nav {
-      position: static; /* No longer fixed to the side */
+      position: sticky; /* No longer fixed to the side */
+      top: 0;
+
+      z-index: 1000;
       flex-direction: row; /* Arrange items horizontally */
       justify-content: center; /* Center the links */
       align-items: center; /* Vertically align items */
@@ -244,7 +247,7 @@
   
     /* Style the header to appear below the new top nav */
     header {
-      height: calc(100vh - 62px); /* Adjust vh to account for nav height */
+      height: 100vh; /* Adjust vh to account for nav height */
     }
   
     /* Light mode overrides for the desktop nav */
