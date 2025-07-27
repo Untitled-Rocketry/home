@@ -418,6 +418,15 @@ faders.forEach(section => {
     observer.observe(section);
 });
 </script>
+  
+<script>
+  const sidebar = document.getElementById('sidebar');
+  const sidebarToggle = document.getElementById('sidebar-toggle');
+
+  sidebarToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('hidden');
+  });
+</script>
 
   
 </body>
