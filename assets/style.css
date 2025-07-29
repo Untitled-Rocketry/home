@@ -43,6 +43,8 @@ header .slogan {
 }
 
 /* === Nav (Mobile & Desktop) === */
+
+/*
 nav {
   position: sticky;
   top: 0;
@@ -84,8 +86,11 @@ nav a:hover {
 nav.hidden {
   display: flex !important;
 }
+*/
 
 /* === Menu Button (Mobile) === */
+
+/*
 #menu-toggle {
   position: fixed;
   top: 10px;
@@ -103,6 +108,7 @@ nav.hidden {
     display: none;
   }
 }
+*/
 
 /* === Section Layout === */
 section {
@@ -290,6 +296,7 @@ footer {
   color: black;
 }
 
+/*
 .light-mode nav {
   background: white;
   border-bottom: 2px solid black;
@@ -305,6 +312,7 @@ footer {
   background: black;
   color: white;
 }
+*/
 
 .light-mode footer {
   background: white;
