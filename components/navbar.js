@@ -16,7 +16,7 @@
 
   if (sidebarToggle && mobileMenu) {
     sidebarToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('hidden'); */
     });
   }
 }
