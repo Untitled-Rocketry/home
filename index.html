@@ -70,6 +70,13 @@
       const { initNavbar } = await import('../components/navbar.js');
       initNavbar(); // initialize it
     });
+  
+  // Load footer
+  fetch("components/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer-container").innerHTML = data;
+    });
 </script>
 
 
