@@ -44,7 +44,7 @@ header .slogan {
 
 /* === Nav (Mobile & Desktop) === */
 nav {
-  position: sticky;
+ /* position: sticky;
   top: 0;
   z-index: 1000;
   display: flex;
@@ -56,7 +56,20 @@ nav {
   background: black;
   border-bottom: 2px solid white;
   transform: none !important;
-  padding-top: 0;
+  padding-top: 0; */
+  position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 200px;
+      background: black;
+      border-left: 2px solid white;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 20px;
+      z-index: 100;
+      transition: transform 0.3s ease;
 }
 
 nav a, #mode-toggle, nav span {
