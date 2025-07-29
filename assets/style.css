@@ -27,20 +27,6 @@ header {
   padding: 20px;
 }
 
-header .title {
-  font-size: 2.5em;
-}
-
-header .slogan {
-  font-size: 1.2em;
-  font-weight: normal;
-  margin-top: 10px;
-  color: #ccc;
-}
-
-.light-mode header .slogan {
-  color: #333;
-}
 
 /* === Nav (Mobile & Desktop) === */
 
@@ -226,6 +212,8 @@ body {
   color: #ccc;
   margin-bottom: 1.5em;
 }
+
+
 
 /* === Section Layout === */
 section {
