@@ -56,7 +56,8 @@ nav {
   background: black;
   border-bottom: 2px solid white;
   transform: none !important;
-  padding-top: 0; 
+  padding-top: 0;
+}
 
 nav a, #mode-toggle, nav span {
   color: white;
@@ -331,4 +332,3 @@ footer {
 .light-mode .social-icon {
   color: black;
 }
-
