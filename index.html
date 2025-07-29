@@ -12,17 +12,7 @@
 </head>
 <body>
 
-<button id="menu-toggle" aria-label="Toggle menu">☰</button>
-
-<nav id="navbar" class="hidden">
-  <a href="index.html">Home</a>
-  <a href="team.html">Team</a>
-  <a href="projects.html">Projects</a>
-  <a href="launches.html">Launches</a>
-  <a href="support.html">Donate</a>
-  <a href="contact.html">Contact</a>
-  <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
-</nav>
+<div id="navbar-container"></div>
 
 <header>
     <div class="title">UNTITLED ROCKETRY</div>
@@ -80,6 +70,27 @@
   </footer>
 </section>
 
+<script>
+  fetch("components/navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar-container").innerHTML = data;
+
+      // Rebind nav functionality after inject
+      const modeToggle = document.getElementById('mode-toggle');
+      const sidebarToggle = document.getElementById('menu-toggle');
+      const sidebar = document.getElementById('navbar');
+
+      modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        modeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+      });
+
+      sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('hidden');
+      });
+    });
+</script>
 
 <script>
 const modeToggle = document.getElementById('mode-toggle');
