@@ -216,7 +216,6 @@
     nav {
       position: sticky; /* No longer fixed to the side */
       top: 0;
-
       z-index: 1000;
       flex-direction: row; /* Arrange items horizontally */
       justify-content: center; /* Center the links */
@@ -234,7 +233,10 @@
       width: auto;
       padding: 20px 15px;
     }
-  
+     /* ADD THIS: Make sure nav is visible despite .hidden on desktop */
+    nav.hidden {
+    display: flex !important;
+    }
     /* Style the header to appear below the new top nav */
     header {
       height: 100vh; /* Adjust vh to account for nav height */
