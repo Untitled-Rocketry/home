@@ -58,26 +58,11 @@
 
 <!-- Container for the navbar -->
 
-
 <script type="module">
-  // Dynamically load navbar HTML
-  fetch("components/navbar.html")
-    .then(res => res.text())
-    .then(async data => {
-      document.getElementById("navbar-container").innerHTML = data;
-
-      // Dynamically import JS functionality
-      const { initNavbar } = await import('../components/navbar.js');
-      initNavbar(); // initialize it
-    });
-  
-  // Load footer
-  fetch("components/footer.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("footer-container").innerHTML = data;
-    });
+  import { loadLayout } from '../components/init.js';
+  loadLayout();
 </script>
+
 
 
 <script>
