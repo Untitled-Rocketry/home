@@ -1,20 +1,11 @@
-// components/init.js
-
 export async function loadLayout() {
   // Load Navbar
-  const navbarContainer = document.getElementById("navbar-container");
-  if (navbarContainer) {
-    const navbarHTML = await fetch("../components/navbar.html").then(res => res.text());
-    navbarContainer.innerHTML = navbarHTML;
-
-    const { initNavbar } = await import("../components/navbar.js");
-    initNavbar();
-  }
+  const navbarRes = await fetch("components/navbar.html");
+  document.getElementById("navbar-container").innerHTML = await navbarRes.text();
+  const { initNavbar } = await import('../components/navbar.js');
+  initNavbar();
 
   // Load Footer
-  const footerContainer = document.getElementById("footer-container");
-  if (footerContainer) {
-    const footerHTML = await fetch("../components/footer.html").then(res => res.text());
-    footerContainer.innerHTML = footerHTML;
-  }
+  const footerRes = await fetch("components/footer.html");
+  document.getElementById("footer-container").innerHTML = await footerRes.text();
 }
