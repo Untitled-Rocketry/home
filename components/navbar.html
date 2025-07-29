@@ -1,35 +1,35 @@
-<header class="w-full bg-black text-white fixed top-0 left-0 z-50 shadow-md">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+<header class="navbar">
+  <div class="navbar-inner">
     <!-- Logo or Brand Name -->
-    <div class="text-xl font-bold">
+    <div class="brand">
       <a href="index.html">Untitled Rocketry</a>
     </div>
 
     <!-- Toggle Button (Mobile Only) -->
-    <button id="menu-toggle" class="md:hidden text-2xl" aria-label="Toggle menu">
+    <button id="menu-toggle" class="menu-button" aria-label="Toggle menu">
       ☰
     </button>
 
     <!-- Navigation Links -->
-    <nav id="navbar" class="hidden md:flex space-x-6 items-center">
-      <a href="index.html" class="hover:text-gray-300">Home</a>
-      <a href="team.html" class="hover:text-gray-300">Team</a>
-      <a href="projects.html" class="hover:text-gray-300">Projects</a>
-      <a href="launches.html" class="hover:text-gray-300">Launches</a>
-      <a href="support.html" class="hover:text-gray-300">Donate</a>
-      <a href="contact.html" class="hover:text-gray-300">Contact</a>
-      <button id="mode-toggle" aria-label="Toggle dark/light mode" class="ml-4">🌙</button>
+    <nav id="navbar" class="nav-links hidden">
+      <a href="index.html">Home</a>
+      <a href="team.html">Team</a>
+      <a href="projects.html">Projects</a>
+      <a href="launches.html">Launches</a>
+      <a href="support.html">Donate</a>
+      <a href="contact.html">Contact</a>
+      <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
     </nav>
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-    <a href="index.html" class="block py-1">Home</a>
-    <a href="team.html" class="block py-1">Team</a>
-    <a href="projects.html" class="block py-1">Projects</a>
-    <a href="launches.html" class="block py-1">Launches</a>
-    <a href="support.html" class="block py-1">Donate</a>
-    <a href="contact.html" class="block py-1">Contact</a>
-    <button id="mobile-mode-toggle" class="mt-2">🌙</button>
+  <div id="mobile-menu" class="mobile-menu hidden">
+    <a href="index.html">Home</a>
+    <a href="team.html">Team</a>
+    <a href="projects.html">Projects</a>
+    <a href="launches.html">Launches</a>
+    <a href="support.html">Donate</a>
+    <a href="contact.html">Contact</a>
+    <button id="mobile-mode-toggle">🌙</button>
   </div>
 </header>
