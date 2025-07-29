@@ -52,7 +52,7 @@ nav {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: auto;
+  height: 20vh;
   background: black;
   border-bottom: 2px solid white;
   transform: none !important;
