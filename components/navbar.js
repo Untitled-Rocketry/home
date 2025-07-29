@@ -1,4 +1,4 @@
-/* export function initNavbar() {
+ export function initNavbar() {
   const modeToggle = document.getElementById('mode-toggle');
   const mobileModeToggle = document.getElementById('mobile-mode-toggle');
   const sidebarToggle = document.getElementById('menu-toggle');
@@ -16,7 +16,7 @@
 
   if (sidebarToggle && mobileMenu) {
     sidebarToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden'); */
+      mobileMenu.classList.toggle('hidden'); 
     });
   }
 }
