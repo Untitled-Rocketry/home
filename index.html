@@ -10,7 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body onload="loadLayout()" class="pt-20">
+<body class="pt-20">
 
 <div id="navbar-container"></div>
 
@@ -53,11 +53,10 @@
 <!-- Container for the navbar -->
 
 <script type="module">
-  import { loadLayout } from '../home/components/init.js';
-  loadLayout();
+    import { loadLayout } from './components/init.js'; // adjust path as needed
+    loadLayout(); // call it here, not in `onload`
 </script>
-
-
+  
 <script>
 // Fade-in on scroll
 const faders = document.querySelectorAll('.fade-in-section');
