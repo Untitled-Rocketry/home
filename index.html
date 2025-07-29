@@ -9,11 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
-
-  <script type="module">
-    import { loadLayout } from '../components/init.js';
-    loadLayout();
-  </script>
 </head>
 <body>
 
@@ -24,7 +19,6 @@
     <div class="slogan">If we don't know what we're doing, neither does our competition.</div>
 </header>
 
-  
 <section id="mission" class="fade-in-section">
   <h2>Mission Statement</h2>
   <p>We choose to build rockets and do the other things not because they're easy, but because we thought they would be easy.</p>
@@ -59,8 +53,6 @@
 <!-- Container for the navbar -->
 
 <script type="module">
-  fetch("components/navbar.html")
-  fetch("components/footer.html")
   import { loadLayout } from '../components/init.js';
   loadLayout();
 </script>
@@ -70,10 +62,7 @@
 <script>
 // Fade-in on scroll
 const faders = document.querySelectorAll('.fade-in-section');
-const options = {
-    threshold: 0.1
-};
-
+const options = { threshold: 0.1 };
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if(entry.isIntersecting){
@@ -83,8 +72,7 @@ const observer = new IntersectionObserver((entries, observer) => {
     });
 }, options);
 
-faders.forEach(section => {
-    observer.observe(section);
+faders.forEach(section => {observer.observe(section);
 });
 </script>
 
