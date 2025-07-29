@@ -109,7 +109,7 @@ section {
   padding: 40px 16px;
   max-width: 900px;
   margin: 0 auto;
-  border-bottom: 2px solid white;
+ /* border-bottom: 2px solid white; */
 }
 
 h2 {
