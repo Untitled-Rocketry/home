@@ -1,4 +1,4 @@
-export function initNavbar() {
+/* export function initNavbar() {
   const modeToggle = document.getElementById('mode-toggle');
   const mobileModeToggle = document.getElementById('mobile-mode-toggle');
   const sidebarToggle = document.getElementById('menu-toggle');
