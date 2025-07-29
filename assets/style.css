@@ -81,6 +81,129 @@
       z-index: 200;
       cursor: pointer;
     }
+    /* Navbar container */
+    .navbar {
+      width: 100%;
+      background: black;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 50;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    /* Inner layout for navbar */
+    .navbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    /* Brand/Logo */
+    .brand a {
+      font-size: 1.25em;
+      font-weight: bold;
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    /* Toggle button (☰) */
+    .menu-button {
+      font-size: 1.5em;
+      background: none;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      display: block;
+    }
+    
+    /* Nav links */
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover {
+      color: #ccc;
+    }
+    
+    #mode-toggle {
+      margin-left: 20px;
+      background: none;
+      border: none;
+      font-size: 1.2em;
+      cursor: pointer;
+      color: inherit;
+    }
+    
+    /* Mobile menu */
+    .mobile-menu {
+      display: flex;
+      flex-direction: column;
+      padding: 0 16px 16px 16px;
+    }
+    
+    .mobile-menu a {
+      padding: 8px 0;
+      text-decoration: none;
+      color: white;
+    }
+    
+    .mobile-menu button {
+      margin-top: 8px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    
+    /* Responsive behavior */
+    @media (min-width: 768px) {
+      .menu-button {
+        display: none;
+      }
+    
+      .nav-links {
+        display: flex !important; /* override "hidden" */
+      }
+    
+      .mobile-menu {
+        display: none !important;
+      }
+    }
+    
+    /* Light mode overrides */
+    .light-mode .navbar {
+      background: white;
+      color: black;
+      border-bottom: 2px solid black;
+    }
+    
+    .light-mode .nav-links a,
+    .light-mode .brand a,
+    .light-mode .mobile-menu a,
+    .light-mode #mode-toggle,
+    .light-mode #mobile-mode-toggle {
+      color: black;
+    }
+    
+    .light-mode .nav-links a:hover,
+    .light-mode .mobile-menu a:hover {
+      color: gray;
+    }
+
     .light-mode {
       background-color: white;
       color: black;
