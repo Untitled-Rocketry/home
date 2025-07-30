@@ -126,20 +126,19 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0.75rem 1rem;
+  align-items: center;
 }
 
 /* Logo */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  left: 0;
 }
 
 /* Navigation Links */
 .nav-links {
   display: flex;
   gap: 1rem;
-  align-items: center;
 }
 
 .nav-links a {
@@ -159,7 +158,6 @@ body {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
-  right: 0;
 }
 
 /* Responsive Styles */
