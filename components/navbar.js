@@ -8,11 +8,9 @@
     document.body.classList.toggle('light-mode');
     const icon = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
     if (modeToggle) modeToggle.textContent = icon;
-    if (mobileModeToggle) mobileModeToggle.textContent = icon;
   }
 
   if (modeToggle) modeToggle.addEventListener('click', toggleDarkMode);
-  if (mobileModeToggle) mobileModeToggle.addEventListener('click', toggleDarkMode);
 /*
   if (sidebarToggle && mobileMenu) {
     sidebarToggle.addEventListener('click', () => {
