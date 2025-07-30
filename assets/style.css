@@ -134,7 +134,14 @@ body {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-   right: 0;
+  right: 0;
+}
+
+/* icon */
+.icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  left: 0;
 }
 
 /* Navigation Links */
@@ -170,6 +177,9 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .icon {
+    display: none;
+  }
   .nav-links {
     display: none;
     position: fixed;
