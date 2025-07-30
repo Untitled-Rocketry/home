@@ -125,7 +125,6 @@ body {
 .navbar-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 0.75rem 1rem;
 }
 
@@ -133,12 +132,14 @@ body {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  align-items: right;
 }
 
 /* Navigation Links */
 .nav-links {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .nav-links a {
@@ -158,6 +159,7 @@ body {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
+  align-items: left;
 }
 
 /* Responsive Styles */
