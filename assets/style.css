@@ -141,6 +141,9 @@ body {
   display: flex;
   gap: 1rem;
   align-items: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .nav-links a {
