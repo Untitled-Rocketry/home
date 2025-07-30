@@ -126,7 +126,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0.75rem 1rem;
-  /* align-items: center; */
+   
 }
 
 /* Logo */
@@ -140,6 +140,7 @@ body {
 .nav-links {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .nav-links a {
