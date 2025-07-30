@@ -3,7 +3,7 @@
   const mobileModeToggle = document.getElementById('mobile-mode-toggle');
   const sidebarToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu'); */
-
+/*
   function toggleDarkMode() {
     document.body.classList.toggle('light-mode');
     const icon = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
