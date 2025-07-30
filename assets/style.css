@@ -17,11 +17,12 @@ body {
 
 /* === Header === */
 header {
+  position: sticky;
   height: auto;
   display: flex;
   flex-direction: column;
- /* justify-content: center;
-  align-items: center; */
+  justify-content: space-between;
+ /* align-items: center; */
   font-weight: bold;
  /* text-align: center; */
   padding: 20px;
