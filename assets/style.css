@@ -132,7 +132,7 @@ body {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  align-items: right;
+  left: 0;
 }
 
 /* Navigation Links */
@@ -159,7 +159,7 @@ body {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
-  align-items: left;
+  right: 0;
 }
 
 /* Responsive Styles */
