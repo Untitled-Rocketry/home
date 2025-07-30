@@ -22,7 +22,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* align-items: center; */
+   align-items: center; 
   font-weight: bold;
  /* text-align: center; */
   padding: 20px;
@@ -174,7 +174,7 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
   position: fixed;
-  right: 0.5rem;
+  right: 1.5rem;
 }
 
 /* Responsive Styles */
