@@ -218,7 +218,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url('assets/herobg.jpg');
+  background-image: url('graphics/herobg.jpg');
   background-size: cover;
   background-position: center;
 }
