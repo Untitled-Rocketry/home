@@ -5,248 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Untitled Rocketry | High School Rocket Team</title>
   <!-- Place this in the <head> section -->
-  <link rel="icon" href="WebMarker-removebg.png" type="image/png">
+  <link rel="icon" href="graphics/favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet" />
-  <style>
-    html { scroll-behavior: smooth; }
-    body {
-      background-color: black;
-      color: white;
-      font-family: 'Space Mono', monospace;
-      margin: 0;
-      padding: 0;
-      transition: background 0.5s, color 0.5s;
-      background-image: url('rocket_line_art.svg');
-      background-repeat: repeat;
-      background-size: 300px;
-    }
-    header {
-    height: 20vh; /* take up full screen */
-    display: flex;
-    flex-direction: column; /* stack title and slogan */
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    text-align: center;
-    padding: 20px;
-    }
-    
-    header .title {
-        font-size: 2.5em;
-    }
-    
-    header .slogan {
-        font-size: 1.2em;
-        font-weight: normal;
-        margin-top: 10px;
-        color: #ccc; /* lighter gray for contrast */
-    }
-    .light-mode header .slogan {
-        color: #333; /* dark gray in light mode */
-    }
-    nav {
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 200px;
-      background: black;
-      border-left: 2px solid white;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding-top: 20px;
-      z-index: 100;
-      transition: transform 0.3s ease;
-    }
-    nav.hidden {
-      transform: translateX(220px);
-    }
-    nav a, #mode-toggle, nav span {
-      color: white;
-      text-decoration: none;
-      padding: 15px 20px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    nav a:hover {
-      background: white;
-      color: black;
-    }
-    #mode-toggle {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1.5em;
-      text-align: left;
-    }
-    #sidebar-toggle {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      font-size: 2em;
-      background: none;
-      border: none;
-      color: white;
-      z-index: 200;
-      cursor: pointer;
-    }
-    .light-mode {
-      background-color: white;
-      color: black;
-    }
-    .light-mode nav {
-      background: white;
-      border-left: 2px solid black;
-    }
-    .light-mode nav a {
-      color: black;
-    }
-    .light-mode nav a:hover {
-      background: black;
-      color: white;
-    }
-    .light-mode #mode-toggle,
-    .light-mode #sidebar-toggle {
-      color: black;
-    }
-    section {
-      padding: 40px 16px;
-      max-width: 900px;
-      margin: 0 auto;
-      border-bottom: 2px solid white;
-    }
-    h2 {
-      font-size: 1.8em;
-      margin-bottom: 16px;
-      border-bottom: 1px solid white;
-      display: inline-block;
-    }
-    .light-mode h2 {
-      border-bottom: 1px solid black; /* Light mode heading underline */
-    }
-    .member, .project {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .member img, .project img {
-      width: 90%;
-      max-width: 300px;
-      border: 2px solid white;
-    }
-    .light-mode .member img,
-    .light-mode .project img {
-      border: 2px solid black; /* Light mode image border */
-    }
-    .donate-button {
-      background: none;
-      border: 2px solid white;
-      color: white;
-      padding: 12px 20px;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
-      width: 90%;
-      max-width: 300px;
-    }
-    .donate-button:hover { background: white; color: black; 
-    }
-    .light-mode .donate-button {
-      border: 2px solid black; /* Light mode button border */
-      color: black; /* Light mode button text */
-    }
-    .light-mode .donate-button:hover {
-      background: black;
-      color: white;
-    }
-    .email-form input[type="email"],
-    .email-form input[type="submit"] {
-      padding: 12px;
-      width: 90%;
-      max-width: 300px;
-      border: 2px solid white;
-      background: black;
-      color: white;
-      margin-bottom: 10px;
-      }
-    .light-mode .email-form input[type="email"],
-    .light-mode .email-form input[type="submit"] {
-      border: 2px solid black; /* Light mode input border */
-      background: white; /* Light mode input bg */
-      color: black; /* Light mode text */
-    }
-    .email-form input[type="submit"]:hover { background: white; color: black; 
-    }
-    .light-mode .email-form input[type="submit"]:hover {
-      background: black;
-      color: white;
-    }
-    @media (min-width: 600px) {
-      .member, { flex-direction: row; text-align: left; }
-    }
-    .fade-in-section {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    
-    .fade-in-section.visible {
-      opacity: 1;
-      transform: none;
-    }
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin: 20px 0;
-    }
-      .social-links img {
-      width: 32px;
-      height: 32px;
-      filter: grayscale(100%); /* makes icons white in dark mode */
-      transition: transform 0.2s ease;
-    }
-    .social-links img:hover {
-      transform: scale(1.1);
-    }
-    .light-mode .social-links img {
-      filter: none; /* makes icons dark in light mode */
-    }
-    
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      border-top: 1px solid white;
-    }
-    .light-mode footer {
-      border-top: 1px solid black;
-      color: black;
-    }
-
-  </style>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
+  
 <body>
-
-<button id="sidebar-toggle" aria-label="Toggle menu">☰</button>
-
-<nav id="sidebar" class="hidden">
-  <a href="index.html">Home</a>
-  <a href="team.html">Team</a>
-  <a href="projects.html">Projects</a>
-  <a href="launches.html">Launches</a>
-  <a href="support.html">Donate</a>
-  <a href="contact.html">Contact</a>
-  <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
-</nav>
-
-<header>
-    <div class="title">UNTITLED ROCKETRY</div>
-    <div class="slogan">If we don't know what we're doing, neither does our competition.</div>
-</header>
+<div id="navbar-container"></div>
+  
+<section class="hero-section">
+    <h1>UNTITLED ROCKETRY</h1>
+    <p>If we don't know what we're doing, neither does our competition.</p>
+</section>
 
 
 <section id="team" class="fade-in-section">
@@ -259,54 +29,24 @@
   </div>
 </section>
 
-<section id="contact" style="border-bottom: none;">
-  <h2>Contact Us</h2>
-  <p>Email: <a href="mailto:untitledrocketry@example.com">untitledrocketry@example.com</a></p>
-  
-  <form class="email-form">
-    <input type="email" placeholder="Enter your email" required />
-    <input type="submit" value="Subscribe" />
-  </form>
-
-  <!-- Social media icons -->
-  <div class="social-links">
-    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-      <img src="instagram.svg" alt="Instagram" />
-    </a>
-    <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-      <img src="twitter.svg" alt="Twitter" />
-    </a>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Untitled Rocketry. All rights reserved.
-  </footer>
+  <div id="footer-container"></div>
 </section>
 
+<!-- Container for the navbar -->
 
-<script>
-const modeToggle = document.getElementById('mode-toggle');
-const sidebarToggle = document.getElementById('sidebar-toggle');
-const sidebar = document.getElementById('sidebar');
-
-modeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('light-mode');
-  modeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
-});
-
-sidebarToggle.addEventListener('click', () => {
-  sidebar.classList.toggle('hidden');
-});
+<script type="module">
+    import { loadLayout } from './components/init.js'; // adjust path as needed
+    loadLayout(); // call it here, not in `onload`
 </script>
 
+  
+<script src="components/navbar.js"></script>
+<script src="components/navbar-loader.js"></script>
+  
 <script>
 // Fade-in on scroll
 const faders = document.querySelectorAll('.fade-in-section');
-const options = {
-    threshold: 0.1
-};
-
+const options = { threshold: 0.1 };
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if(entry.isIntersecting){
@@ -316,8 +56,7 @@ const observer = new IntersectionObserver((entries, observer) => {
     });
 }, options);
 
-faders.forEach(section => {
-    observer.observe(section);
+faders.forEach(section => {observer.observe(section);
 });
 </script>
 
