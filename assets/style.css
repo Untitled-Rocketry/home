@@ -120,10 +120,6 @@ header {
   }
 }
 
-
-
-
-
 .hero-section {
   background: rgba(0, 0, 0, 0.8); /* semi-transparent background over your line art */
   color: white;
@@ -150,8 +146,6 @@ header {
   margin-bottom: 1.5em;
 }
 
-
-
 /* === Section Layout === */
 section {
   padding: 40px 16px;
@@ -165,10 +159,6 @@ h2 {
   margin-bottom: 16px;
   border-bottom: 1px solid white;
   display: inline-block;
-}
-
-.light-mode h2 {
-  border-bottom: 1px solid black;
 }
 
 /* === Members & Projects === */
@@ -185,11 +175,6 @@ h2 {
   width: 90%;
   max-width: 300px;
   border: 2px solid white;
-}
-
-.light-mode .member img,
-.light-mode .project img {
-  border: 2px solid black;
 }
 
 /* === Donate Button === */
@@ -209,16 +194,6 @@ h2 {
   color: black;
 }
 
-.light-mode .donate-button {
-  border: 2px solid black;
-  color: black;
-}
-
-.light-mode .donate-button:hover {
-  background: black;
-  color: white;
-}
-
 /* === Email Form === */
 .email-form input[type="email"],
 .email-form input[type="submit"] {
@@ -231,21 +206,9 @@ h2 {
   margin-bottom: 10px;
 }
 
-.light-mode .email-form input[type="email"],
-.light-mode .email-form input[type="submit"] {
-  border: 2px solid black;
-  background: white;
-  color: black;
-}
-
 .email-form input[type="submit"]:hover {
   background: white;
   color: black;
-}
-
-.light-mode .email-form input[type="submit"]:hover {
-  background: black;
-  color: white;
 }
 
 /* === Fade In Animation === */
@@ -277,10 +240,6 @@ h2 {
 
 .social-links img:hover {
   transform: scale(1.1);
-}
-
-.light-mode .social-links img {
-  filter: none;
 }
 
 /* === Footer === */
@@ -347,40 +306,6 @@ footer ul {
   max-width: 1200px;
   margin: 0 auto;
 }
-}
-
-
-/* === Light Mode Overrides === */
-.light-mode {
-  background-color: white;
-  color: black;
-}
-
-.light-mode footer {
-  background: white;
-  color: #333;
-  border-top: 1px solid black;
-}
-
-.light-mode .footer-section h3 {
-  color: black;
-}
-
-.light-mode .footer-link {
-  color: #004499;
-}
-
-.light-mode .footer-link:hover {
-  color: #002244;
-}
-
-.light-mode .footer-bottom {
-  border-top: 1px solid #aaa;
-  color: #555;
-}
-
-.light-mode .social-icon {
-  color: black;
 }
 
 * {
